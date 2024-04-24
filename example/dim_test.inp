@@ -1,0 +1,18 @@
+nx      56
+ny      52
+nz      32
+dx      0.5d0
+dy      0.5d0
+dz      0.5d0
+
+periodic F
+
+funct 0 !0:pwlda, 1:pbe
+
+h_type 1 !0=s^-1h psuedo wfs, 1=s^-1/2hs^-1/2 orthogonal wfs
+flg_bin F
+ekcut -1d0 ! negative values to have paw subroutines to generate
+dt      0.05d0
+nt      10
+strength 1e-3
+exct_pol 1
