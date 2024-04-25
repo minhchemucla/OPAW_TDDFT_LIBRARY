@@ -6,10 +6,10 @@ subroutine shs(ham,pin,pout)
     use paw_mod
     use atom_mod
     use atom_mod, only : p=> pawinfo, at=> atominfo
-    use ham_mod
+    use opaw_ham_mod
     implicit none
 
-    type(hamiltonian_obj) :: ham
+    type(opaw_ham_obj) :: ham
     complex*16,intent(in) :: pin(nx,ny,nz)
     complex*16 :: pout(nx,ny,nz)
     complex*16 :: tmp(nx,ny,nz)

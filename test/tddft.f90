@@ -3,7 +3,7 @@ subroutine tddft
   use ham_obj, only : ham, ham_pert
   use main_mod, only : nn,dt,wfs,nt,nocc,nstates,sm
   use main_mod, only : nx,ny,nz,dx,dy,dz,ipol,dv,h_type
-  use ham_mod
+  use opaw_ham_mod
   implicit none
   integer :: it,st,i
   complex*16, allocatable :: wfs_pert(:,:)

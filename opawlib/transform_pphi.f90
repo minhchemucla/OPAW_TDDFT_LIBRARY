@@ -27,11 +27,11 @@ subroutine transform_pphi(it)
             write(*,*) p(it)%mat_sp(:,i)
         enddo
         
-        do i=1,nr
-            write(106,*) p(it)%rr(i),p(it)%ptilde(:,i)
-            write(107,*) p(it)%rr(i),p(it)%phitilde(:,i)
-            write(108,*) p(it)%rr(i),p(it)%phi(:,i)
-        enddo
+!        do i=1,nr
+!            write(106,*) p(it)%rr(i),p(it)%ptilde(:,i)
+!            write(107,*) p(it)%rr(i),p(it)%phitilde(:,i)
+!            write(108,*) p(it)%rr(i),p(it)%phi(:,i)
+!        enddo
         do i=1,p(it)%nl
             call get_index
             call alloc_submats
@@ -47,11 +47,11 @@ subroutine transform_pphi(it)
             call dealloc_submats
         enddo
 
-        do i=1,nr
-            write(103,*) p(it)%rr(i),p(it)%ptilde1(:,i)
-            write(104,*) p(it)%rr(i),p(it)%phitilde1(:,i)
-            write(105,*) p(it)%rr(i),p(it)%phi1(:,i)
-        enddo
+!        do i=1,nr
+!            write(103,*) p(it)%rr(i),p(it)%ptilde1(:,i)
+!            write(104,*) p(it)%rr(i),p(it)%phitilde1(:,i)
+!            write(105,*) p(it)%rr(i),p(it)%phi1(:,i)
+!        enddo
 
         write(*,*) 'p(it)%s after:'
         do i=1,p(it)%nstates

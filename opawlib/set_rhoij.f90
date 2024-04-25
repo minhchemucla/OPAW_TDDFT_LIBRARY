@@ -2,12 +2,12 @@ subroutine set_rhoij(ham)
     use atom_mod
     use atom_mod, only : p => pawinfo, at => atominfo
     use libpaw_mod
-    use ham_mod
+    use opaw_ham_mod
     implicit none
 
     integer :: ia
     integer :: ndim,ndim1,i,j,ind,nselect
-    type(hamiltonian_obj) :: ham
+    type(opaw_ham_obj) :: ham
 
     do ia=1,natom
         !pawrhoij only stores the bottom lower triangle of rhoij

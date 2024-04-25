@@ -1,12 +1,12 @@
 subroutine calc_eig(ham)
   use main_mod
   use mpi_lib_ours
-  use ham_mod
+  use opaw_ham_mod
   implicit none
   integer :: i
   real*8  :: denom, numer, tmp(nn)
   complex*16 :: p(nn), hp(nn)
-  type(hamiltonian_obj) :: ham
+  type(opaw_ham_obj) :: ham
 
   
   if(rank==0) then

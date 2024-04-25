@@ -1,6 +1,6 @@
 subroutine rk4_prop_opaw(n,nocc,nstates,dt,p,ham)
   use opaw_mod, only : dv
-  use ham_mod
+  use opaw_ham_mod
   use mpi_lib_ours
   implicit none
   !integer :: is, jb, n, nb
@@ -12,7 +12,7 @@ subroutine rk4_prop_opaw(n,nocc,nstates,dt,p,ham)
   complex*16, dimension(n,nstates) :: p
   complex*16, allocatable, dimension(:,:) :: k1,k2,k4,y,pp
   complex*16, parameter :: ci = (0d0,1d0)
-  type(hamiltonian_obj) :: ham
+  type(opaw_ham_obj) :: ham
   !real*8 :: wtime, wtime2
 
   do i=1,nstates

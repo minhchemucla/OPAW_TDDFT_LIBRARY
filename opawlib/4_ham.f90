@@ -11,10 +11,10 @@
 !dens   = density
 !nhat   = charge compensation density
 !h_type = h_type
-module ham_mod
+module opaw_ham_mod
   use atom_mod
   implicit none
-  type hamiltonian_obj
+  type opaw_ham_obj
     integer :: h_type !ca*ca
     integer :: n, ns!, nocc
     real*8,  allocatable :: nhat(:)
@@ -31,7 +31,7 @@ module ham_mod
       implicit none
       integer :: st,it,ia,ms
       integer :: n,ns,h_type
-      type(hamiltonian_obj) :: ham
+      type(opaw_ham_obj) :: ham
 
       !ham%n = n
       !ham%ns = ns
@@ -65,7 +65,7 @@ module ham_mod
     !  integer :: st,it,ia,ms
     !  integer :: n,ns
     !  real*8  :: wfs(n,ns)
-    !  type(hamiltonian_obj) :: ham
+    !  type(opaw_ham_obj) :: ham
 
     !  if(n.ne.ham%n) then
     !    write(*,*) 'n, ham%n wfs', n, ham%n
@@ -83,7 +83,7 @@ module ham_mod
     !  integer :: st,it,ia,ms
     !  integer :: n, flag
     !  real*8  :: pot(n)
-    !  type(hamiltonian_obj) :: ham
+    !  type(opaw_ham_obj) :: ham
 
     !  if(n.ne.ham%n) then
     !    write(*,*) 'n, ham%n ', n, ham%n
@@ -112,7 +112,7 @@ module ham_mod
     !  integer :: st,it,ia,ms
     !  integer :: n, ns
     !  real*8  :: wfs(n,ns),dens(n),vks(n),vxc(n),vh(n),nhat(n)
-    !  type(hamiltonian_obj) :: ham
+    !  type(opaw_ham_obj) :: ham
 
     !  if(n.ne.ham%n) then
     !    write(*,*) 'n, ham%n ham', n, ham%n
@@ -129,4 +129,4 @@ module ham_mod
     !  call set_ham_var(n,ham,vh,4)
     !  call set_ham_var(n,ham,nhat,5)
     !end subroutine set_ham
-end module ham_mod
+end module opaw_ham_mod

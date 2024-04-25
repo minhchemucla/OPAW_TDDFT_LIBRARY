@@ -7,10 +7,10 @@ subroutine sh(ham,pin,pout)
     use paw_mod
     use atom_mod
     use atom_mod, only : p=> pawinfo, at=> atominfo
-    use ham_mod
+    use opaw_ham_mod
     implicit none
 
-    type(hamiltonian_obj) :: ham
+    type(opaw_ham_obj) :: ham
     complex*16,intent(in) :: pin(nx,ny,nz)
     complex*16 :: pout(nx,ny,nz)
     complex*16 :: tmp(nx,ny,nz)
@@ -23,11 +23,7 @@ subroutine sh(ham,pin,pout)
 
 
     ik=1
-
-    call time_print('start applying shs')
-    !write(*,*) 'sum(pin)', sum(pin), maxval(abs(pin)), minval(abs(pin))
     call h_phi(ham,pin,pout)
-    !write(*,*) 'sum(pout)', sum(pout), maxval(abs(pout)), minval(abs(pout))
 !pout= s^-1 h pin
     call time_print('after apply h')
     do ia=1,natom

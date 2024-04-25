@@ -1,6 +1,6 @@
 subroutine acc_coeff1(nx,ny,nz,nocc,wf,ham)
     use paw_mod
-    use ham_mod
+    use opaw_ham_mod
     use atom_mod, only : p => pawinfo, atom_map, ngrid, natom
     use mpi_lib_ours
     implicit none
@@ -9,7 +9,7 @@ subroutine acc_coeff1(nx,ny,nz,nocc,wf,ham)
     integer :: nx,ny,nz,nocc
     complex*16  :: wf(nx,ny,nz,nocc)
     complex*16, allocatable :: ca(:),tmp(:,:)
-    type(hamiltonian_obj) :: ham
+    type(opaw_ham_obj) :: ham
 
     do ia=1,natom
       ham%at(ia)%rhoij=0d0

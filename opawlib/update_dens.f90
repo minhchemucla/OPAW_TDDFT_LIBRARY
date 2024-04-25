@@ -1,7 +1,7 @@
 subroutine update_dens(n,nocc,wf,ham)
       use opaw_mod, only : nx,ny,nz, dv
       use atom_mod, only : natom, at => atominfo, atom_map
-      use ham_mod
+      use opaw_ham_mod
       use mpi_lib_ours
 !                at_old => atominfo_old
       implicit none
@@ -11,7 +11,7 @@ subroutine update_dens(n,nocc,wf,ham)
       complex*16 :: wf(n,nocc)
       real*8   :: dens(n),nhat(n)
       real*8  :: n1,n2,n3
-      type(hamiltonian_obj) :: ham
+      type(opaw_ham_obj) :: ham
 
       if(rank==0)call acc_coeff1(nx,ny,nz,nocc,wf,ham)
       ham%dens = 0d0
@@ -20,10 +20,10 @@ subroutine update_dens(n,nocc,wf,ham)
       enddo
 
       if(rank==0) then 
-        write(*,*) 'before allsum,rank,dens',rank,sum(ham%dens)*dv
+        !write(*,*) 'before allsum,rank,dens',rank,sum(ham%dens)*dv
         call get_nhat(nx,ny,nz,natom,ham%dens,ham%nhat,ham%at)
       endif
       call bcast_r8(ham%nhat,size(ham%nhat),0) 
 !      !if(rank==0) write(*,*) 'max,min(dens)',rank,maxval(dens), minval(dens)
-      if(rank==0) write(*,*) 'max,min(nhat)',rank,maxval(ham%nhat), minval(ham%nhat)
+!      if(rank==0) write(*,*) 'max,min(nhat)',rank,maxval(ham%nhat), minval(ham%nhat)
 end subroutine update_dens      

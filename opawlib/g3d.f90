@@ -20,9 +20,9 @@ subroutine get_localg3d
                 call get_angularpart
             enddo
             qmmax=(2*p(it)%nl-1)**2
-            do ig=1,qmmax
-              write(420,*) 'ia,ig,sumlocalg',ia,ig,sum(at(ia)%local_g3d(:,ig))
-            enddo
+            !do ig=1,qmmax
+            !  write(420,*) 'ia,ig,sumlocalg',ia,ig,sum(at(ia)%local_g3d(:,ig))
+            !enddo
         else
             qmmax=(2*p(it)%nl-1)**2
             allocate(at(ia)%local_grid(ngrid(ia),3),stat=stat)

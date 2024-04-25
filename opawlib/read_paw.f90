@@ -776,7 +776,7 @@ contains
                     call cg3(ll,mm,p(it)%lstate(il),im,p(it)%lstate(jl),jm,cg)
  !                   write(412,*) 'it,is,js,ll,mm,cg',it,is,js,ll,mm,cg
                     p(it)%qijlm(i,is,js)=nijl*cg!*sq4pi
-                    write(410,*) 'i,is,js,qijlm',i,is,js,p(it)%qijlm(i,is,js)
+                    !write(410,*) 'i,is,js,qijlm',i,is,js,p(it)%qijlm(i,is,js)
                 enddo
             enddo
         enddo

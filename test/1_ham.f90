@@ -1,7 +1,7 @@
 module ham_obj
-  use ham_mod
+  use opaw_ham_mod
   implicit none
 
-  type(hamiltonian_obj) :: ham, ham_pert
+  type(opaw_ham_obj) :: ham, ham_pert
 
 end module ham_obj

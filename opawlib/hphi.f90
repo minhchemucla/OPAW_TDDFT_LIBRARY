@@ -4,7 +4,7 @@ subroutine h_phi(ham,pin,hp)
     use opaw_mod, only : nx,ny,nz, nn, ek3d
     use atom_mod
     use atom_mod, only : p=> pawinfo, at_common=> atominfo
-    use ham_mod
+    use opaw_ham_mod
     use mpi_lib_ours
     implicit none
 
@@ -12,7 +12,7 @@ subroutine h_phi(ham,pin,hp)
     complex*16 :: pin(nx,ny,nz)
     complex*16 :: hp(nx,ny,nz),tmp(nx,ny,nz)
     complex*16 :: cin(nx,ny,nz),cout(nx,ny,nz)
-    type(hamiltonian_obj) :: ham
+    type(opaw_ham_obj) :: ham
     !real*8     :: wtime
 
     ik = 1

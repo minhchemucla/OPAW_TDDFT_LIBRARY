@@ -103,7 +103,7 @@ subroutine initrhoij(cplex,lexexch,lpawu,my_natom,natom,&
 ! write(174,*) 'lexexch',lexexch
 ! write(174,*) 'lpawu',lpawu
 ! write(174,*) 'typat',typat
- write(174,*) 'spinat',spinat
+! write(174,*) 'spinat',spinat
 ! DBG_ENTER("COLL")
 !write(*,*) 'flag 2'
 

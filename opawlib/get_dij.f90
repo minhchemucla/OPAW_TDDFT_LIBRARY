@@ -5,12 +5,12 @@ subroutine get_dij(ham)
     use atom_mod
     use atom_mod, only : p => pawinfo, at => atominfo
     use paw_mod
-    use ham_mod
+    use opaw_ham_mod
     implicit none
     real*8  :: param_dij_max=500d0
     real*8, allocatable :: vxc2d(:,:)
     integer :: ia   
-    type(hamiltonian_obj) :: ham
+    type(opaw_ham_obj) :: ham
 
     allocate(vxc2d(nn,1))
     if(rank==0) then

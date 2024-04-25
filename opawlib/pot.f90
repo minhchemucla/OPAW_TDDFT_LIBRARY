@@ -2,12 +2,12 @@
 subroutine get_pot_opaw(ham)
     use opaw_mod, only :  nn,nx,ny,nz,vloc_tot,&
         nhat,ncoret,scale_vh,funct,periodic, funct_x, funct_c
-    use ham_mod
+    use opaw_ham_mod
     use mpi_lib_ours
     implicit none
 
     real*8, allocatable :: vks_tot(:)
-    type(hamiltonian_obj) :: ham
+    type(opaw_ham_obj) :: ham
 
 
       if(rank==0) then

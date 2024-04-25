@@ -3,3 +3,5 @@ debug/
 *.mod
 .*.swp
 *~
+opawlib/diff/
+example/fort.*
