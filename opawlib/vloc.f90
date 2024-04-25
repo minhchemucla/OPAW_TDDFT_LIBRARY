@@ -12,10 +12,13 @@ subroutine get_vloc_ncoret
     real*8, allocatable :: vloc_tot3d(:,:,:), ncoret3d(:,:,:)
     integer :: mgrid
 
+    if(allocated(vloc_tot)) deallocate(vloc_tot)
+    allocate(vloc_tot(nn),stat=stat)
+    if (stat/=0) stop 'vloc_tot alloc problem'
     allocate(vloc_tot3d(nx,ny,nz),ncoret3d(nx,ny,nz),stat=stat)
     if (stat/=0) stop 'vloc_tot3d alloc problem'
-    allocate(vloc_tot(nn),ncoret(nn),dens_tmp(nn),stat=stat)
-    if (stat/=0) stop 'vloc_tot alloc problem'
+    allocate(ncoret(nn),dens_tmp(nn),stat=stat)
+    if (stat/=0) stop 'ncoret, dens_tmp alloc problem'
 
     if(rank==0) then
         call get_mgrid

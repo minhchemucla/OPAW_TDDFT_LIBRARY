@@ -1,0 +1,495 @@
+  now reading nx from           13
+  =           56
+  now reading ny from           13
+  =           52
+  now reading nz from           13
+  =           32
+  now reading dx from           13
+  =   0.50000000000000000     
+  now reading dy from           13
+  =   0.50000000000000000     
+  now reading dz from           13
+  =   0.50000000000000000     
+  now reading periodic from           13
+  =  F
+  now reading funct from           13
+  =            0
+  now reading h_type from           13
+  =            1
+  now reading flg_bin from           13
+  =  F
+  now reading ekcut from           13
+  =   -1.0000000000000000     
+  now reading dt from           13
+  =    5.0000000000000003E-002
+  now reading nt from           13
+  =           10
+  now reading strength from           13
+  =    1.0000000000000000E-003
+  now reading exct_pol from           13
+  =            1
+ sum(dens)*dv   0.0000000000000000     
+ Number of atoms:           18
+ And their atomic numbers:            1           1           1           1           1           1           1           1           6           6           6           6           6           6           6           6           6           6
+ number of different elements:            2
+ z of the different elements:            1           6
+ atoms types mapped:            1           1           1           1           1           1           1           1           2           2           2           2           2           2           2           2           2           2
+ number of atoms for each type:            8          10
+ atindx1           1           2           3           4           5           6           7           8           9          10          11          12          13          14          15          16          17          18
+ paw filename for atom of type:            1  is:
+ H.LDA_PW-JTH.xml    
+ paw filename for atom of type:            6  is:
+ C.LDA_PW-JTH.xml    
+ finish reading atom info
+ ========================
+
+ now reading paw information for element type:           1
+ from file: H.LDA_PW-JTH.xml    
+ nstates:            3
+ nr:         1500
+ l of valence states:            0           0           1
+ occupation of valence states:    1.0000000000000000        0.0000000000000000        0.0000000000000000     
+ number of distinct l:            2
+ the distinct l's are:            0           1
+ mstates:            5
+ m of valence states:            0           0          -1           0           1
+ correspondence between 3d and 1d states:            1           2           3           3           3
+ adjusted occupation of states:    1.0000000000000000        0.0000000000000000        0.0000000000000000     
+ max r for functions:   79.999999999967784     
+ radius of augmentation sphere is:   0.994950354    
+ the corresponding radial grid is:          806
+ nr_int:          806
+  dx, dy, dz   0.500000000      0.500000000      0.500000000    
+  rpad    1.00000000    
+ nrough,nfine          10          10          10          40          40          40
+ it,dxyz,dxyzf           1  0.50000000000000000       0.50000000000000000       0.50000000000000000       0.11538461538461539       0.11538461538461539       0.11538461538461539     
+ transform_p
+ s before:
+   1.1076965346791590E-002 -0.12826105110913666        3.7382208232776826E-003
+ -0.12826105110913666       0.98632016244575027       -5.2550623462793489E-002
+   3.7382208232776826E-003  -5.2550623462794821E-002   1.3201930745796453E-003
+ overlap before:
+   5.7224983963734601       -7.0023873933642289E-002 -0.94482512787132056     
+  -7.0023873933642525E-002  0.64425406181619971        6.4197867468476746     
+ -0.94482512787132278        6.4197867468476737        79.118646470914072     
+ number of states for l=           0  is:            2
+ the states with l=           0  are:            1           2
+ the sub matrix for l=            0  is:
+   5.7224983963734601       -7.0023873933642525E-002
+  -7.0023873933642289E-002  0.64425406181619971     
+ the second sub matrix for l=            0  is:
+   7.7307463572603305E-002 -0.26416045447829750     
+ -0.26416045447829756       0.63948389511490911     
+ number of states for l=           1  is:            1
+ the states with l=           1  are:            3
+ the sub matrix for l=            1  is:
+   79.118646470914072     
+ the second sub matrix for l=            1  is:
+  0.10445188914101607     
+ p(it)%s after:
+  -2.7339113947686400E-002   3.5527136788005009E-015  -5.4924263246867611E-002
+   5.3290705182007514E-015  0.74413047263520227      -0.38242780224823036     
+  -5.4924263246874716E-002 -0.38242780224823036       0.10445188914098935     
+ overlap of projectors
+   1.0000000000000000        4.7794543438917222E-016  0.29730434751043894     
+   4.7704419133329365E-016   1.0000000000000016       0.84870016472973497     
+  0.29730434751043899       0.84870016472973508        1.0000000000000009     
+ shape function type for compesation charge:           1
+ radius parameter of compensation charge:  0.79672474328991139     
+ the corresponding radial grid is:          771
+ norm of gl:           1   2.5621078052202644E-002
+ norm of gl:           2   4.5973089285959610E-003
+ norm of gl:           3   1.1777402026036082E-003
+ sij
+  -2.7339113567338990E-002   3.1798111729384005E-015  -0.0000000000000000       -0.0000000000000000       -0.0000000000000000     
+   3.1798111729384005E-015  0.74413046228275215       -0.0000000000000000       -0.0000000000000000       -0.0000000000000000     
+  -0.0000000000000000       -0.0000000000000000       0.10445188768788440        0.0000000000000000        0.0000000000000000     
+  -0.0000000000000000       -0.0000000000000000        0.0000000000000000       0.10445188768788441        0.0000000000000000     
+  -0.0000000000000000       -0.0000000000000000        0.0000000000000000        0.0000000000000000       0.10445188768788440     
+ int 4pi ncoretilde r^2 dr  0.98892303465477105     
+ finish reading H.LDA_PW-JTH.xml    
+ =============================
+
+ now reading paw information for element type:           2
+ from file: C.LDA_PW-JTH.xml    
+ nstates:            4
+ nr:         2001
+ l of valence states:            0           0           1           1
+ occupation of valence states:    2.0000000000000000        0.0000000000000000        2.0000000000000000        0.0000000000000000     
+ number of distinct l:            2
+ the distinct l's are:            0           1
+ mstates:            8
+ m of valence states:            0           0          -1           0           1          -1           0           1
+ correspondence between 3d and 1d states:            1           2           3           3           3           4           4           4
+ adjusted occupation of states:    2.0000000000000000        0.0000000000000000       0.66666666666666663        0.0000000000000000     
+ max r for functions:   80.000000000000057     
+ radius of augmentation sphere is:    1.50736701    
+ the corresponding radial grid is:         1302
+ nr_int:         1302
+  dx, dy, dz   0.500000000      0.500000000      0.500000000    
+  rpad    1.00000000    
+ nrough,nfine          14          14          14          56          56          56
+ it,dxyz,dxyzf           2  0.50000000000000000       0.50000000000000000       0.50000000000000000       0.11818181818181818       0.11818181818181818       0.11818181818181818     
+ transform_p
+ s before:
+  -5.8999736484178333E-002  0.74723649100548417       -1.9142322449174576E-002   4.6774943155573179E-002
+  0.74723649100548406       -9.3061095037088961       0.24474571068229689      -0.74280506525167311     
+  -1.9142322449174465E-002  0.24474571068229689        6.9942573171587918E-002 -0.48380555027109751     
+   4.6774943155572846E-002 -0.74280506525168022      -0.48380555027109728        3.2034338061324803     
+ overlap before:
+   26.192068089040394        2.9444587266736351        17.245927117909957        3.6884593534387848     
+   2.9444587266736351       0.36259839783044828        2.0319599520437128       0.52453002571687180     
+   17.245927117909957        2.0319599520437128        17.325442747870085        4.2804698029361425     
+   3.6884593534387848       0.52453002571687180        4.2804698029361425        1.3125568364072990     
+ number of states for l=           0  is:            2
+ the states with l=           0  are:            1           2
+ the sub matrix for l=            0  is:
+   26.192068089040394        2.9444587266736351     
+   2.9444587266736351       0.36259839783044828     
+ the second sub matrix for l=            0  is:
+ -0.16773291557403269      -0.25819769457676078     
+ -0.25819769457676101      -0.35155858207443846     
+ number of states for l=           1  is:            2
+ the states with l=           1  are:            3           4
+ the sub matrix for l=            1  is:
+   17.325442747870085        4.2804698029361425     
+   4.2804698029361425        1.3125568364072990     
+ the second sub matrix for l=            1  is:
+  0.20259596245565603       0.51129761346368774     
+  0.51129761346368796        1.0720489300281653     
+ p(it)%s after:
+ -0.53371511668724736        0.0000000000000000       -8.7413537085836879E-002   7.5224871144683902E-002
+   0.0000000000000000        1.4423619038783642E-002   1.6385938049442217E-002   4.6507816169857108E-002
+  -8.7413537085836879E-002   1.6385938049438664E-002  -3.3805235528731714E-002  -1.7763568394002505E-014
+   7.5224871144683902E-002   4.6507816169857108E-002  -1.7763568394002505E-014   1.3084501280125274     
+ overlap of projectors
+  0.99999999999991840        7.0549171735936281E-014 -0.15088568023070931      -0.84244465033316041     
+   7.0550964059307033E-014  0.99999999999993916      -0.90490990880323596       0.32470753386193729     
+ -0.15088568023070931      -0.90490990880323596        1.0000000000000067       -5.1737872502332911E-015
+ -0.84244465033316041       0.32470753386193729       -5.1722695789500482E-015   1.0000000000000060     
+ shape function type for compesation charge:           1
+ radius parameter of compensation charge:   1.3005258933364401     
+ the corresponding radial grid is:         1276
+ norm of gl:           1  0.11143685713778956     
+ norm of gl:           2   5.3278854792909114E-002
+ norm of gl:           3   3.6367931525315353E-002
+ sij
+ -0.53371510926212717        3.6172611292981202E-015  -0.0000000000000000       -0.0000000000000000       -0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+   3.6172611292981202E-015   1.4423618838120591E-002   0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+  -0.0000000000000000        0.0000000000000000       -3.3805235058429431E-002  -0.0000000000000000       -0.0000000000000000       -1.5363678843106424E-014  -0.0000000000000000       -0.0000000000000000     
+  -0.0000000000000000        0.0000000000000000       -0.0000000000000000       -3.3805235058429438E-002  -0.0000000000000000       -0.0000000000000000       -1.5363678843106428E-014  -0.0000000000000000     
+  -0.0000000000000000        0.0000000000000000       -0.0000000000000000       -0.0000000000000000       -3.3805235058429431E-002  -0.0000000000000000       -0.0000000000000000       -1.5363678843106424E-014
+   0.0000000000000000        0.0000000000000000       -1.5363678843106424E-014  -0.0000000000000000       -0.0000000000000000        1.3084501098091741        0.0000000000000000        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000       -0.0000000000000000       -1.5363678843106428E-014  -0.0000000000000000        0.0000000000000000        1.3084501098091745        0.0000000000000000     
+   0.0000000000000000        0.0000000000000000       -0.0000000000000000       -0.0000000000000000       -1.5363678843106424E-014   0.0000000000000000        0.0000000000000000        1.3084501098091741     
+ int 4pi ncoretilde r^2 dr   3.9781143266316064     
+ finish reading C.LDA_PW-JTH.xml    
+ =============================
+
+ rough grid, start and end
+ atom number:           1
+          29          32          12          38          41          21
+ atom number:           2
+          20          13          12          29          22          21
+ atom number:           3
+          20          32          12          29          41          21
+ atom number:           4
+          29          13          12          38          22          21
+ atom number:           5
+          37          27          12          46          36          21
+ atom number:           6
+          12          18          12          21          27          21
+ atom number:           7
+          12          27          12          21          36          21
+ atom number:           8
+          37          18          12          46          27          21
+ atom number:           9
+          22          23          10          35          36          23
+ atom number:          10
+          22          18          10          35          31          23
+ atom number:          11
+          27          26          10          40          39          23
+ atom number:          12
+          18          15          10          31          28          23
+ atom number:          13
+          18          26          10          31          39          23
+ atom number:          14
+          27          15          10          40          28          23
+ atom number:          15
+          32          23          10          45          36          23
+ atom number:          16
+          13          18          10          26          31          23
+ atom number:          17
+          13          23          10          26          36          23
+ atom number:          18
+          32          18          10          45          31          23
+ #. local grid points belonging to atoms:           31          31          31          31          29          29          29          29         110         110         112         112         112         112         113         113         113         113
+ finished mapping local grids
+ ============================
+
+ finished allocating atompaw for rank0
+ ia,rhoij0           1   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           2   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           3   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           4   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           5   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           6   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           7   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           8   1.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0           9   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          10   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          11   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          12   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          13   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          14   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          15   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          16   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          17   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ ia,rhoij0          18   2.0000000000000000        0.0000000000000000       0.66666666666666663       0.66666666666666663       0.66666666666666663        0.0000000000000000        0.0000000000000000        0.0000000000000000     
+ finished bcast atompaw
+ sum of projectors*dv
+ finished mapping projectors on local grids
+ ==========================================
+
+ finished preparing paw
+ ======================
+
+ ecut adjusted to:   19.739208800204793     
+ 
+ getcut: wavevector=  0.0000  0.0000  0.0000  ngfft=  56  52  32
+         ecut(hartree)=     19.739   => boxcut(ratio)=   1.00000                                                                                                                                                                                                                                                                                                                                                                                  
+ 
+ getcut : WARNING -
+  Note that boxcut < 1.5; this usually means
+  that the forces are being fairly strongly affected by  the smallness of the fft box.
+  Be sure to test with larger ngfft(1:3) values.
+                                                                                                                                                                                                                                                                                                          
+ ekcut   19.739208800204793     
+ ek_factor   1.0000000000000000     
+ setting up libpaw
+ it,filename           1 H.LDA_PW-JTH.xml                                                                                                                                                                                                                                                        
+ Pseudopotential format is: paw10
+ basis_size (lnmax)=  3 (lmn_size=  5), orbitals=   0   0   1
+ Spheres core radius: rc_sph= 0.99495033
+ 1 radial meshes are used:
+  - mesh 1: r(i)=AA*[exp(BB*(i-1))-1], size=1500 , AA= 0.63034E-02 BB= 0.63034E-02
+ Shapefunction is SIN type: shapef(r)=[sin(pi*r/rshp)/(pi*r/rshp)]**2
+ Radius for shape functions =  0.79672474
+ mmax= 1500
+ Radial grid used for partial waves is grid 1
+ Radial grid used for projectors is grid 1
+ Radial grid used for (t)core density is grid 1
+ Radial grid used for Vloc is grid 1
+ Radial grid used for pseudo valence density is grid 1
+ Mesh size for Vloc has been set to 1280 to avoid numerical noise.
+ Compensation charge density is not taken into account in XC energy/potential
+ beta integral value:      -0.280737E+00
+ reduced_ncore F
+ it,filename           2 C.LDA_PW-JTH.xml                                                                                                                                                                                                                                                        
+ Pseudopotential format is: paw10
+ basis_size (lnmax)=  4 (lmn_size=  8), orbitals=   0   0   1   1
+ Spheres core radius: rc_sph= 1.50736703
+ 1 radial meshes are used:
+  - mesh 1: r(i)=AA*[exp(BB*(i-1))-1], size=2001 , AA= 0.94549E-03 BB= 0.56729E-02
+ Shapefunction is SIN type: shapef(r)=[sin(pi*r/rshp)/(pi*r/rshp)]**2
+ Radius for shape functions =  1.30052589
+ mmax= 2001
+ Radial grid used for partial waves is grid 1
+ Radial grid used for projectors is grid 1
+ Radial grid used for (t)core density is grid 1
+ Radial grid used for Vloc is grid 1
+ Radial grid used for pseudo valence density is grid 1
+ Mesh size for Vloc has been set to 1756 to avoid numerical noise.
+ Compensation charge density is not taken into account in XC energy/potential
+ beta integral value:      -0.482389E+01
+ reduced_ncore F
+ spinatzero F
+ finish preparing libpaw
+ ========================
+
+ total valence charge is   48.000000000000000     
+ number of occupied states is          24
+  kb pseudpt formfactor. atomtype(ma) =           1  charge=            1  nrr         1500
+  maxval, minval cvkb   0.20668139013059772       -4751.4642254109585     
+  rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
+ rank, islc, iz, slcwdth            0           1           1           1
+ rank, islc, iz, slcwdth            0           2           2           1
+ rank, islc, iz, slcwdth            0           3           3           1
+ rank, islc, iz, slcwdth            0           4           4           1
+ rank, islc, iz, slcwdth            0           5           5           1
+ rank, islc, iz, slcwdth            0           6           6           1
+ rank, islc, iz, slcwdth            0           7           7           1
+ rank, islc, iz, slcwdth            0           8           8           1
+ rank, islc, iz, slcwdth            0           9           9           1
+ rank, islc, iz, slcwdth            0          10          10           1
+ rank, islc, iz, slcwdth            0          11          11           1
+ rank, islc, iz, slcwdth            0          12          12           1
+ rank, islc, iz, slcwdth            0          13          13           1
+ rank, islc, iz, slcwdth            0          14          14           1
+ rank, islc, iz, slcwdth            0          15          15           1
+ rank, islc, iz, slcwdth            0          16          16           1
+ rank, islc, iz, slcwdth            0          17          17           1
+ rank, islc, iz, slcwdth            0          18          18           1
+ rank, islc, iz, slcwdth            0          19          19           1
+ rank, islc, iz, slcwdth            0          20          20           1
+ rank, islc, iz, slcwdth            0          21          21           1
+ rank, islc, iz, slcwdth            0          22          22           1
+ rank, islc, iz, slcwdth            0          23          23           1
+ rank, islc, iz, slcwdth            0          24          24           1
+ rank, islc, iz, slcwdth            0          25          25           1
+ rank, islc, iz, slcwdth            0          26          26           1
+ rank, islc, iz, slcwdth            0          27          27           1
+ rank, islc, iz, slcwdth            0          28          28           1
+ rank, islc, iz, slcwdth            0          29          29           1
+ rank, islc, iz, slcwdth            0          30          30           1
+ rank, islc, iz, slcwdth            0          31          31           1
+ rank, islc, iz, slcwdth            0          32          32           1
+ rank, islc, iz, slcwdth            0          33          33           1
+ rank, islc, iz, slcwdth            0          34          34           1
+ rank, islc, iz, slcwdth            0          35          35           1
+ rank, islc, iz, slcwdth            0          36          36           1
+ rank, islc, iz, slcwdth            0          37          37           1
+ rank, islc, iz, slcwdth            0          38          38           1
+ rank, islc, iz, slcwdth            0          39          39           1
+ rank, islc, iz, slcwdth            0          40          40           1
+ rank, islc, iz, slcwdth            0          41          41           1
+ rank, islc, iz, slcwdth            0          42          42           1
+ rank, islc, iz, slcwdth            0          43          43           1
+ rank, islc, iz, slcwdth            0          44          44           1
+ rank, islc, iz, slcwdth            0          45          45           1
+ rank, islc, iz, slcwdth            0          46          46           1
+ rank, islc, iz, slcwdth            0          47          47           1
+ rank, islc, iz, slcwdth            0          48          48           1
+ rank, islc, iz, slcwdth            0          49          49           1
+ rank, islc, iz, slcwdth            0          50          50           1
+ rank, islc, iz, slcwdth            0          51          51           1
+ rank, islc, iz, slcwdth            0          52          52           1
+ rank, islc, iz, slcwdth            0          53          53           1
+ rank, islc, iz, slcwdth            0          54          54           1
+ rank, islc, iz, slcwdth            0          55          55           1
+ rank, islc, iz, slcwdth            0          56          56           1
+ rank, islc, iz, slcwdth            0          57          57           1
+ rank, islc, iz, slcwdth            0          58          58           1
+ rank, islc, iz, slcwdth            0          59          59           1
+ rank, islc, iz, slcwdth            0          60          60           1
+ rank, islc, iz, slcwdth            0          61          61           1
+ rank, islc, iz, slcwdth            0          62          62           1
+ rank, islc, iz, slcwdth            0          63          63           1
+ rank, islc, iz, slcwdth            0          64          64           1
+  kb pseudpt formfactor. atomtype(ma) =           2  charge=            1  nrr         2001
+  maxval, minval cvkb    2.1660603333109183       -19002.677860394739     
+  rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
+ rank, islc, iz, slcwdth            0           1           1           1
+ rank, islc, iz, slcwdth            0           2           2           1
+ rank, islc, iz, slcwdth            0           3           3           1
+ rank, islc, iz, slcwdth            0           4           4           1
+ rank, islc, iz, slcwdth            0           5           5           1
+ rank, islc, iz, slcwdth            0           6           6           1
+ rank, islc, iz, slcwdth            0           7           7           1
+ rank, islc, iz, slcwdth            0           8           8           1
+ rank, islc, iz, slcwdth            0           9           9           1
+ rank, islc, iz, slcwdth            0          10          10           1
+ rank, islc, iz, slcwdth            0          11          11           1
+ rank, islc, iz, slcwdth            0          12          12           1
+ rank, islc, iz, slcwdth            0          13          13           1
+ rank, islc, iz, slcwdth            0          14          14           1
+ rank, islc, iz, slcwdth            0          15          15           1
+ rank, islc, iz, slcwdth            0          16          16           1
+ rank, islc, iz, slcwdth            0          17          17           1
+ rank, islc, iz, slcwdth            0          18          18           1
+ rank, islc, iz, slcwdth            0          19          19           1
+ rank, islc, iz, slcwdth            0          20          20           1
+ rank, islc, iz, slcwdth            0          21          21           1
+ rank, islc, iz, slcwdth            0          22          22           1
+ rank, islc, iz, slcwdth            0          23          23           1
+ rank, islc, iz, slcwdth            0          24          24           1
+ rank, islc, iz, slcwdth            0          25          25           1
+ rank, islc, iz, slcwdth            0          26          26           1
+ rank, islc, iz, slcwdth            0          27          27           1
+ rank, islc, iz, slcwdth            0          28          28           1
+ rank, islc, iz, slcwdth            0          29          29           1
+ rank, islc, iz, slcwdth            0          30          30           1
+ rank, islc, iz, slcwdth            0          31          31           1
+ rank, islc, iz, slcwdth            0          32          32           1
+ rank, islc, iz, slcwdth            0          33          33           1
+ rank, islc, iz, slcwdth            0          34          34           1
+ rank, islc, iz, slcwdth            0          35          35           1
+ rank, islc, iz, slcwdth            0          36          36           1
+ rank, islc, iz, slcwdth            0          37          37           1
+ rank, islc, iz, slcwdth            0          38          38           1
+ rank, islc, iz, slcwdth            0          39          39           1
+ rank, islc, iz, slcwdth            0          40          40           1
+ rank, islc, iz, slcwdth            0          41          41           1
+ rank, islc, iz, slcwdth            0          42          42           1
+ rank, islc, iz, slcwdth            0          43          43           1
+ rank, islc, iz, slcwdth            0          44          44           1
+ rank, islc, iz, slcwdth            0          45          45           1
+ rank, islc, iz, slcwdth            0          46          46           1
+ rank, islc, iz, slcwdth            0          47          47           1
+ rank, islc, iz, slcwdth            0          48          48           1
+ rank, islc, iz, slcwdth            0          49          49           1
+ rank, islc, iz, slcwdth            0          50          50           1
+ rank, islc, iz, slcwdth            0          51          51           1
+ rank, islc, iz, slcwdth            0          52          52           1
+ rank, islc, iz, slcwdth            0          53          53           1
+ rank, islc, iz, slcwdth            0          54          54           1
+ rank, islc, iz, slcwdth            0          55          55           1
+ rank, islc, iz, slcwdth            0          56          56           1
+ rank, islc, iz, slcwdth            0          57          57           1
+ rank, islc, iz, slcwdth            0          58          58           1
+ rank, islc, iz, slcwdth            0          59          59           1
+ rank, islc, iz, slcwdth            0          60          60           1
+ rank, islc, iz, slcwdth            0          61          61           1
+ rank, islc, iz, slcwdth            0          62          62           1
+ rank, islc, iz, slcwdth            0          63          63           1
+ rank, islc, iz, slcwdth            0          64          64           1
+  sum_vloc_tot(post kb)    445486.36803139152     
+ finish preparing vloc,ncoret
+ ========================
+
+ eigs, <p|s^(-1/2)hs^(-1/2)|p>/<p|p>
+ -0.79097737984629357      -0.79097738006628338     
+ -0.74070388252712827      -0.74070388092031891     
+ -0.69531309475656533      -0.69531310262638835     
+ -0.66465660687604244      -0.66465660967556495     
+ -0.64346844589892682      -0.64346844460610619     
+ -0.55961076548384370      -0.55961077107985757     
+ -0.54677763578168226      -0.54677764104463900     
+ -0.53363233950144195      -0.53363233739484273     
+ -0.46093218450640833      -0.46093217896168287     
+ -0.44944477773112351      -0.44944477970839658     
+ -0.44104916549973733      -0.44104916791895143     
+ -0.39248302807298169      -0.39248302363793158     
+ -0.39160818965979577      -0.39160818819466231     
+ -0.36752717546635361      -0.36752717909795546     
+ -0.36553932482722590      -0.36553931892649233     
+ -0.35349583991680722      -0.35349584426052250     
+ -0.34805177380228530      -0.34805176989626596     
+ -0.32046093592202529      -0.32046093270192005     
+ -0.29632617639972048      -0.29632618092245883     
+ -0.29227339818246123      -0.29227340041457162     
+ -0.28490925588071253      -0.28490925403548406     
+ -0.25934774314671760      -0.25934775040077701     
+ -0.22555730847082237      -0.22555731299715676     
+ -0.19834243581969055      -0.19834244066834877     
+ i, exx:           24 -0.56121578490525303     
+           1   0.0000000000000000       -2.5399318196432508       -3.9209195785983031E-011   1.9979643064776606E-007 it, t,     d_dip 
+           1   0.0000000000000000       -1.5537601515630779E-005   9.2230354721556959E-004  -8.1243185491014876E-005  -2.5554694211588815E-003   9.2230354717636040E-004  -8.1242985694584229E-005 it, t,     dip,    dip_pert 
+           2   5.0000000000000003E-002  -5.0138691746875672        1.8851120751200989E-010   3.5534391827130897E-007 it, t,     d_dip 
+           2   5.0000000000000003E-002  -1.5537487120534062E-005   9.2230370567880063E-004  -8.1243140839969618E-005  -5.0294066618081015E-003   9.2230370586731183E-004  -8.1242785496051347E-005 it, t,     dip,    dip_pert 
+           3  0.10000000000000001       -7.3832519576694464        3.6191492511217227E-010   4.2469993339721950E-007 it, t,     d_dip 
+           3  0.10000000000000001       -1.5537297010562243E-005   9.2230396675906242E-004  -8.1243068354885372E-005  -7.3987892546800091E-003   9.2230396712097735E-004  -8.1242643654951975E-005 it, t,     dip,    dip_pert 
+           4  0.15000000000000002       -9.6474226906389653        1.5624773610362075E-010   3.7894229304468764E-007 it, t,     d_dip 
+           4  0.15000000000000002       -1.5537032484871788E-005   9.2230432607095798E-004  -8.1242970677394304E-005  -9.6629597231238373E-003   9.2230432622720572E-004  -8.1242591735101259E-005 it, t,     dip,    dip_pert 
+           5  0.20000000000000001       -11.833081488515791       -4.8879585275163340E-010   2.1391865405798183E-007 it, t,     d_dip 
+           5  0.20000000000000001       -1.5536695697954270E-005   9.2230477995184647E-004  -8.1242850481465925E-005  -1.1848618184213745E-002   9.2230477946305062E-004  -8.1242636562811867E-005 it, t,     dip,    dip_pert 
+           6  0.25000000000000000       -13.971245683558937       -1.2849828623026638E-009  -4.1705252586902303E-008 it, t,     d_dip 
+           6  0.25000000000000000       -1.5536290085622161E-005   9.2230532393651542E-004  -8.1242708814775082E-005  -1.3986781973644559E-002   9.2230532265153255E-004  -8.1242750520027669E-005 it, t,     dip,    dip_pert 
+           7  0.30000000000000004       -16.077378568506358       -2.0119284927302972E-009  -3.3091230428571039E-007 it, t,     d_dip 
+           7  0.30000000000000004       -1.5535818998577181E-005   9.2230595363857111E-004  -8.1242546929284691E-005  -1.6092914387504938E-002   9.2230595162664261E-004  -8.1242877841588976E-005 it, t,     dip,    dip_pert 
+           8  0.35000000000000003       -18.146238570055178       -3.0380396549151145E-009  -5.8879194323401517E-007 it, t,     d_dip 
+           8  0.35000000000000003       -1.5535285521377947E-005   9.2230666469222174E-004  -8.1242366419653008E-005  -1.8161773855576557E-002   9.2230666165418209E-004  -8.1242955211596242E-005 it, t,     dip,    dip_pert 
+           9  0.40000000000000002       -20.161652895837165       -5.2194542091155149E-009  -7.6945391554107852E-007 it, t,     d_dip 
+           9  0.40000000000000002       -1.5534692248208562E-005   9.2230745231898807E-004  -8.1242169535049728E-005  -2.0177187588085371E-002   9.2230744709953386E-004  -8.1242938988965269E-005 it, t,     dip,    dip_pert 
+          10  0.45000000000000001       -22.111447319939177       -8.3858262131183969E-009  -8.6488162347241136E-007 it, t,     d_dip 
+          10  0.45000000000000001       -1.5534040918042508E-005   9.2230831116546367E-004  -8.1241959445781562E-005  -2.2126981360857220E-002   9.2230830277963746E-004  -8.1242824327405034E-005 it, t,     dip,    dip_pert 

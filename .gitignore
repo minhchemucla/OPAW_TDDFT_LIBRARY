@@ -5,3 +5,4 @@ debug/
 *~
 opawlib/diff/
 example/fort.*
+test/opaw_test.x

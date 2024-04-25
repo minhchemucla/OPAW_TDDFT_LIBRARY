@@ -12,6 +12,7 @@ subroutine opaw_libpaw_prepare
     call prep_kpt
     call prep_paw
     call prep_libpaw
+    call get_rnel_opaw
     !nhat = compensation charge
     allocate(nhat(nx,ny,nz))
     call vk_prep_opaw
