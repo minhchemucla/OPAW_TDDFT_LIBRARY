@@ -1,4 +1,5 @@
-OPAW LIBRARY CODE DOCUMENTATION
+
+# OPAW LIBRARY 
 
 This library code provides the necessary ingredients to
   1. prepare and apply the OPAW Hamiltonian,
@@ -10,19 +11,19 @@ This library comes with a test program for you to look at to see
 examples of how to use the library.
 
 
-Chapters
-  0. Prerequisites
-  1. OPAW Files
-  2. OPAW Interface
-    2.1 Variables to import
-    2.2 Internal OPAW Variables
-  3. Structure of the code
-  4. OPAW Subroutines
-  5. Compiling
+## Chapters
 
-=================================================================
-              0. Prerequisites
-=================================================================
+  0. Prerequisites  
+  1. OPAW Files  
+  2. OPAW Interface  
+    1. Variables to import  
+    1. Internal OPAW Variables  
+  3. Structure of the code  
+  4. OPAW Subroutines  
+  5. Compiling  
+
+##              0. Prerequisites
+
 This library was mainly designed for members of the Neuhauser group
 so there some particulars to sucessfully implementing this library.
 
