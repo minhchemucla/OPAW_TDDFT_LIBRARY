@@ -17,7 +17,6 @@ subroutine read_input
 
     call fetch_l (periodic,'periodic',13)
     call fetch_i (funct, 'funct',13)
-    call fetch_l (flg_bin   , 'flg_bin',13)
     call fetch_r (ekcut, 'ekcut',13)
     !call fetch_r (p_fg, 'finegrid',13)
     call fetch_r (dt, 'dt',13)

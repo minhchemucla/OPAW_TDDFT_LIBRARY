@@ -1,4 +1,4 @@
-subroutine opaw_libpaw_prepare
+subroutine prepare_opaw
     use opaw_mod, only : nx,ny,nz,nhat
     use opaw_mod, only : xmax,ymax,zmax
     use opaw_mod, only : dx,dy,dz
@@ -18,4 +18,4 @@ subroutine opaw_libpaw_prepare
     call vk_prep_opaw
     call ek3d_prep_opaw 
     call get_vloc_ncoret
-end subroutine opaw_libpaw_prepare
+end subroutine prepare_opaw

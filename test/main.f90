@@ -13,7 +13,7 @@ program main
   call read_wfs
 
   !OPAW STUFF
-  call opaw_libpaw_prepare
+  call prepare_opaw
   call opaw_make_ham(nn,nocc,nstates,wfs,ham)
 
   call calc_eig(ham)

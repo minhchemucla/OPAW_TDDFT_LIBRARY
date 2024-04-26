@@ -10,30 +10,17 @@ subroutine read_wfs
   real*8  :: tmp(nn)
 
   close(441)
-  if(flg_bin)then; open (441,file='wf_bar.bin',status='old',form='unformatted');
-  else;           open (441,file='wf_bar.txt',status='old');  
-  endif
+  open (441,file='wf_bar.txt',status='old');  
   rewind(441)
   
-  if(flg_bin) then
-     read(441) ch, nx_r
-     read(441) ch, ny_r
-     read(441) ch, nz_r
-     read(441) ch, dx_r
-     read(441) ch, dy_r
-     read(441) ch, dz_r
-     read(441) ch, nsp_r
-     read(441) ch, nstates
-  else
-     read(441,*) ch, nx_r
-     read(441,*) ch, ny_r
-     read(441,*) ch, nz_r
-     read(441,*) ch, dx_r
-     read(441,*) ch, dy_r
-     read(441,*) ch, dz_r
-     read(441,*) ch, nsp_r
-     read(441,*) ch, nstates
-  endif
+  read(441,*) ch, nx_r
+  read(441,*) ch, ny_r
+  read(441,*) ch, nz_r
+  read(441,*) ch, dx_r
+  read(441,*) ch, dy_r
+  read(441,*) ch, dz_r
+  read(441,*) ch, nsp_r
+  read(441,*) ch, nstates
 
   call check(nx,nx_r,' nx, nx_r')
   call check(ny,ny_r,' ny, ny_r')
@@ -45,28 +32,16 @@ subroutine read_wfs
 
   allocate(wfs(nn,nstates),eigs(nstates), stat=st);if(st/=0) stop 'wfs'
 
-  if(flg_bin) then
-    read(441) ch !eigs
-    read(441) eigs
-    read(441) ch !skip orbitals
-  else
-    read(441,*) ch !eigs
-    read(441,*) eigs
-    read(441,*) ch !skip orbitals
-  endif
+  read(441,*) ch !eigs
+  read(441,*) eigs
+  read(441,*) ch !skip orbitals
 
   !write(*,*) eigs
-
   
   dens = 0d0
   do i=1,nstates
-    if(flg_bin) then
-      read(441) 
-      read(441) tmp
-    else
-      read(441,*) 
-      read(441,*) tmp
-    endif
+    read(441,*) 
+    read(441,*) tmp
     wfs(:,i) = tmp
     !if(rank==0) write(6,*) 'is, norm', i, sum(abs(wfs(:,i))**2d0)*dv, wfs(1,i)
     if(i <= nocc) dens = dens + 2d0*abs(wfs(:,i))**2d0
