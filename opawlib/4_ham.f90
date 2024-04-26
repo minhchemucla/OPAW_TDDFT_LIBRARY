@@ -22,6 +22,7 @@ module opaw_ham_mod
     real*8,  allocatable :: vxc(:)
     real*8,  allocatable :: vh(:)
     type(atom), allocatable :: at(:)  !just need for rhoij and dij
+    logical              :: alloc_flg=.false.
   end type
   contains
     subroutine init_ham(n,ham)
@@ -30,6 +31,8 @@ module opaw_ham_mod
       integer :: st,it,ia,ms
       integer :: n,ns
       type(opaw_ham_obj) :: ham
+
+      if(ham%alloc_flg) return
 
       !ham%n = n
       !ham%ns = ns
@@ -53,6 +56,8 @@ module opaw_ham_mod
          ham%at(ia)%rhoij=0d0
          ham%at(ia)%dij=0d0
       enddo
+
+      ham%alloc_flg = .true.
 
     end subroutine init_ham
 

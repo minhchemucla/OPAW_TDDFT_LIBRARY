@@ -14,8 +14,7 @@ program main
 
   !OPAW STUFF
   call opaw_libpaw_prepare
-  call init_ham(nn,ham)
-  call opaw_make_hamiltonian(nn,nocc,nstates,wfs,ham)
+  call opaw_make_ham(nn,nocc,nstates,wfs,ham)
 
   call calc_eig(ham)
   call test_exx

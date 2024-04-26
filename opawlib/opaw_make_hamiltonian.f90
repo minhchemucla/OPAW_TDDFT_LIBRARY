@@ -1,4 +1,4 @@
-subroutine opaw_make_hamiltonian(nn,nocc,nstates,wfs,ham)
+subroutine opaw_make_ham(nn,nocc,nstates,wfs,ham)
     use opaw_ham_mod
     use mpi_lib_ours
     implicit none
@@ -8,6 +8,7 @@ subroutine opaw_make_hamiltonian(nn,nocc,nstates,wfs,ham)
     complex*16, allocatable :: tmp(:,:), sp(:,:), wfs_paw(:,:)!, wf_c(:,:)
     type(opaw_ham_obj) :: ham
 
+    call init_ham(nn,ham) !will only alloc arrays/initilize if ham is fresh
     call calc_is_ie(is,ie,nstates)
 
     allocate(wfs_paw(nn,nstates),stat=st);if(st/=0) stop 'wfs_paw'
@@ -16,9 +17,9 @@ subroutine opaw_make_hamiltonian(nn,nocc,nstates,wfs,ham)
     call get_pot_opaw(ham)
     call get_dij(ham)
     deallocate(wfs_paw)
-end subroutine opaw_make_hamiltonian
+end subroutine opaw_make_ham
 
-subroutine opaw_make_hamiltonian_r8(nn,nocc,nstates,wfs,ham)
+subroutine opaw_make_ham_r8(nn,nocc,nstates,wfs,ham)
     use opaw_ham_mod
     use mpi_lib_ours
     implicit none
@@ -38,4 +39,4 @@ subroutine opaw_make_hamiltonian_r8(nn,nocc,nstates,wfs,ham)
     call get_pot_opaw(ham)
     call get_dij(ham)
     deallocate(wfs_paw,wfs_c)
-end subroutine opaw_make_hamiltonian_r8
+end subroutine opaw_make_ham_r8

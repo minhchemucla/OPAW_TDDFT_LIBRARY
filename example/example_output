@@ -280,6 +280,9 @@
  Radial grid used for Vloc is grid 1
  Radial grid used for pseudo valence density is grid 1
  Mesh size for Vloc has been set to 1280 to avoid numerical noise.
+ reduced_ncore F
+ reduced_ncore F
+ reduced_ncore F
  Compensation charge density is not taken into account in XC energy/potential
  beta integral value:      -0.280737E+00
  reduced_ncore F
@@ -298,149 +301,93 @@
  Radial grid used for Vloc is grid 1
  Radial grid used for pseudo valence density is grid 1
  Mesh size for Vloc has been set to 1756 to avoid numerical noise.
+ reduced_ncore F
+ reduced_ncore F
+ reduced_ncore F
  Compensation charge density is not taken into account in XC energy/potential
  beta integral value:      -0.482389E+01
  reduced_ncore F
+ spinatzero F
+ spinatzero F
+ spinatzero F
  spinatzero F
  finish preparing libpaw
  ========================
 
  total valence charge is   48.000000000000000     
  number of occupied states is          24
+  rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
+ rank, islc, iz, slcwdth            3           1           4           4
   kb pseudpt formfactor. atomtype(ma) =           1  charge=            1  nrr         1500
   maxval, minval cvkb   0.20668139013059772       -4751.4642254109585     
   rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
- rank, islc, iz, slcwdth            0           1           1           1
- rank, islc, iz, slcwdth            0           2           2           1
- rank, islc, iz, slcwdth            0           3           3           1
- rank, islc, iz, slcwdth            0           4           4           1
- rank, islc, iz, slcwdth            0           5           5           1
- rank, islc, iz, slcwdth            0           6           6           1
- rank, islc, iz, slcwdth            0           7           7           1
- rank, islc, iz, slcwdth            0           8           8           1
- rank, islc, iz, slcwdth            0           9           9           1
- rank, islc, iz, slcwdth            0          10          10           1
- rank, islc, iz, slcwdth            0          11          11           1
- rank, islc, iz, slcwdth            0          12          12           1
- rank, islc, iz, slcwdth            0          13          13           1
- rank, islc, iz, slcwdth            0          14          14           1
- rank, islc, iz, slcwdth            0          15          15           1
- rank, islc, iz, slcwdth            0          16          16           1
- rank, islc, iz, slcwdth            0          17          17           1
- rank, islc, iz, slcwdth            0          18          18           1
- rank, islc, iz, slcwdth            0          19          19           1
- rank, islc, iz, slcwdth            0          20          20           1
- rank, islc, iz, slcwdth            0          21          21           1
- rank, islc, iz, slcwdth            0          22          22           1
- rank, islc, iz, slcwdth            0          23          23           1
- rank, islc, iz, slcwdth            0          24          24           1
- rank, islc, iz, slcwdth            0          25          25           1
- rank, islc, iz, slcwdth            0          26          26           1
- rank, islc, iz, slcwdth            0          27          27           1
- rank, islc, iz, slcwdth            0          28          28           1
- rank, islc, iz, slcwdth            0          29          29           1
- rank, islc, iz, slcwdth            0          30          30           1
- rank, islc, iz, slcwdth            0          31          31           1
- rank, islc, iz, slcwdth            0          32          32           1
- rank, islc, iz, slcwdth            0          33          33           1
- rank, islc, iz, slcwdth            0          34          34           1
- rank, islc, iz, slcwdth            0          35          35           1
- rank, islc, iz, slcwdth            0          36          36           1
- rank, islc, iz, slcwdth            0          37          37           1
- rank, islc, iz, slcwdth            0          38          38           1
- rank, islc, iz, slcwdth            0          39          39           1
- rank, islc, iz, slcwdth            0          40          40           1
- rank, islc, iz, slcwdth            0          41          41           1
- rank, islc, iz, slcwdth            0          42          42           1
- rank, islc, iz, slcwdth            0          43          43           1
- rank, islc, iz, slcwdth            0          44          44           1
- rank, islc, iz, slcwdth            0          45          45           1
- rank, islc, iz, slcwdth            0          46          46           1
- rank, islc, iz, slcwdth            0          47          47           1
- rank, islc, iz, slcwdth            0          48          48           1
- rank, islc, iz, slcwdth            0          49          49           1
- rank, islc, iz, slcwdth            0          50          50           1
- rank, islc, iz, slcwdth            0          51          51           1
- rank, islc, iz, slcwdth            0          52          52           1
- rank, islc, iz, slcwdth            0          53          53           1
- rank, islc, iz, slcwdth            0          54          54           1
- rank, islc, iz, slcwdth            0          55          55           1
- rank, islc, iz, slcwdth            0          56          56           1
- rank, islc, iz, slcwdth            0          57          57           1
- rank, islc, iz, slcwdth            0          58          58           1
- rank, islc, iz, slcwdth            0          59          59           1
- rank, islc, iz, slcwdth            0          60          60           1
- rank, islc, iz, slcwdth            0          61          61           1
- rank, islc, iz, slcwdth            0          62          62           1
- rank, islc, iz, slcwdth            0          63          63           1
- rank, islc, iz, slcwdth            0          64          64           1
+ rank, islc, iz, slcwdth            0           1           1           4
+ rank, islc, iz, slcwdth            3           2           8           4
+ rank, islc, iz, slcwdth            0           2           5           4
+ rank, islc, iz, slcwdth            3           3          12           4
+ rank, islc, iz, slcwdth            0           3           9           4
+ rank, islc, iz, slcwdth            3           4          16           4
+ rank, islc, iz, slcwdth            0           4          13           4
+ rank, islc, iz, slcwdth            3           5          20           4
+ rank, islc, iz, slcwdth            0           5          17           4
+ rank, islc, iz, slcwdth            3           6          24           4
+ rank, islc, iz, slcwdth            0           6          21           4
+ rank, islc, iz, slcwdth            3           7          28           4
+ rank, islc, iz, slcwdth            0           7          25           4
+ rank, islc, iz, slcwdth            3           8          32           4
+ rank, islc, iz, slcwdth            0           8          29           4
+ rank, islc, iz, slcwdth            3           9          36           4
+ rank, islc, iz, slcwdth            0           9          33           4
+ rank, islc, iz, slcwdth            3          10          40           4
+ rank, islc, iz, slcwdth            0          10          37           4
+ rank, islc, iz, slcwdth            3          11          44           4
+ rank, islc, iz, slcwdth            0          11          41           4
+ rank, islc, iz, slcwdth            3          12          48           4
+ rank, islc, iz, slcwdth            0          12          45           4
+ rank, islc, iz, slcwdth            3          13          52           4
+ rank, islc, iz, slcwdth            0          13          49           4
+ rank, islc, iz, slcwdth            3          14          56           4
+ rank, islc, iz, slcwdth            0          14          53           4
+ rank, islc, iz, slcwdth            3          15          60           4
+ rank, islc, iz, slcwdth            0          15          57           4
+ rank, islc, iz, slcwdth            3          16          64           4
+ rank, islc, iz, slcwdth            0          16          61           4
+  rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
+ rank, islc, iz, slcwdth            3           1           4           4
   kb pseudpt formfactor. atomtype(ma) =           2  charge=            1  nrr         2001
   maxval, minval cvkb    2.1660603333109183       -19002.677860394739     
   rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
- rank, islc, iz, slcwdth            0           1           1           1
- rank, islc, iz, slcwdth            0           2           2           1
- rank, islc, iz, slcwdth            0           3           3           1
- rank, islc, iz, slcwdth            0           4           4           1
- rank, islc, iz, slcwdth            0           5           5           1
- rank, islc, iz, slcwdth            0           6           6           1
- rank, islc, iz, slcwdth            0           7           7           1
- rank, islc, iz, slcwdth            0           8           8           1
- rank, islc, iz, slcwdth            0           9           9           1
- rank, islc, iz, slcwdth            0          10          10           1
- rank, islc, iz, slcwdth            0          11          11           1
- rank, islc, iz, slcwdth            0          12          12           1
- rank, islc, iz, slcwdth            0          13          13           1
- rank, islc, iz, slcwdth            0          14          14           1
- rank, islc, iz, slcwdth            0          15          15           1
- rank, islc, iz, slcwdth            0          16          16           1
- rank, islc, iz, slcwdth            0          17          17           1
- rank, islc, iz, slcwdth            0          18          18           1
- rank, islc, iz, slcwdth            0          19          19           1
- rank, islc, iz, slcwdth            0          20          20           1
- rank, islc, iz, slcwdth            0          21          21           1
- rank, islc, iz, slcwdth            0          22          22           1
- rank, islc, iz, slcwdth            0          23          23           1
- rank, islc, iz, slcwdth            0          24          24           1
- rank, islc, iz, slcwdth            0          25          25           1
- rank, islc, iz, slcwdth            0          26          26           1
- rank, islc, iz, slcwdth            0          27          27           1
- rank, islc, iz, slcwdth            0          28          28           1
- rank, islc, iz, slcwdth            0          29          29           1
- rank, islc, iz, slcwdth            0          30          30           1
- rank, islc, iz, slcwdth            0          31          31           1
- rank, islc, iz, slcwdth            0          32          32           1
- rank, islc, iz, slcwdth            0          33          33           1
- rank, islc, iz, slcwdth            0          34          34           1
- rank, islc, iz, slcwdth            0          35          35           1
- rank, islc, iz, slcwdth            0          36          36           1
- rank, islc, iz, slcwdth            0          37          37           1
- rank, islc, iz, slcwdth            0          38          38           1
- rank, islc, iz, slcwdth            0          39          39           1
- rank, islc, iz, slcwdth            0          40          40           1
- rank, islc, iz, slcwdth            0          41          41           1
- rank, islc, iz, slcwdth            0          42          42           1
- rank, islc, iz, slcwdth            0          43          43           1
- rank, islc, iz, slcwdth            0          44          44           1
- rank, islc, iz, slcwdth            0          45          45           1
- rank, islc, iz, slcwdth            0          46          46           1
- rank, islc, iz, slcwdth            0          47          47           1
- rank, islc, iz, slcwdth            0          48          48           1
- rank, islc, iz, slcwdth            0          49          49           1
- rank, islc, iz, slcwdth            0          50          50           1
- rank, islc, iz, slcwdth            0          51          51           1
- rank, islc, iz, slcwdth            0          52          52           1
- rank, islc, iz, slcwdth            0          53          53           1
- rank, islc, iz, slcwdth            0          54          54           1
- rank, islc, iz, slcwdth            0          55          55           1
- rank, islc, iz, slcwdth            0          56          56           1
- rank, islc, iz, slcwdth            0          57          57           1
- rank, islc, iz, slcwdth            0          58          58           1
- rank, islc, iz, slcwdth            0          59          59           1
- rank, islc, iz, slcwdth            0          60          60           1
- rank, islc, iz, slcwdth            0          61          61           1
- rank, islc, iz, slcwdth            0          62          62           1
- rank, islc, iz, slcwdth            0          63          63           1
- rank, islc, iz, slcwdth            0          64          64           1
+ rank, islc, iz, slcwdth            0           1           1           4
+ rank, islc, iz, slcwdth            3           2           8           4
+ rank, islc, iz, slcwdth            0           2           5           4
+ rank, islc, iz, slcwdth            3           3          12           4
+ rank, islc, iz, slcwdth            0           3           9           4
+ rank, islc, iz, slcwdth            3           4          16           4
+ rank, islc, iz, slcwdth            0           4          13           4
+ rank, islc, iz, slcwdth            3           5          20           4
+ rank, islc, iz, slcwdth            0           5          17           4
+ rank, islc, iz, slcwdth            3           6          24           4
+ rank, islc, iz, slcwdth            0           6          21           4
+ rank, islc, iz, slcwdth            3           7          28           4
+ rank, islc, iz, slcwdth            0           7          25           4
+ rank, islc, iz, slcwdth            3           8          32           4
+ rank, islc, iz, slcwdth            0           8          29           4
+ rank, islc, iz, slcwdth            3           9          36           4
+ rank, islc, iz, slcwdth            0           9          33           4
+ rank, islc, iz, slcwdth            3          10          40           4
+ rank, islc, iz, slcwdth            0          10          37           4
+ rank, islc, iz, slcwdth            3          11          44           4
+ rank, islc, iz, slcwdth            0          11          41           4
+ rank, islc, iz, slcwdth            3          12          48           4
+ rank, islc, iz, slcwdth            0          12          45           4
+ rank, islc, iz, slcwdth            3          13          52           4
+ rank, islc, iz, slcwdth            0          13          49           4
+ rank, islc, iz, slcwdth            3          14          56           4
+ rank, islc, iz, slcwdth            0          14          53           4
+ rank, islc, iz, slcwdth            3          15          60           4
+ rank, islc, iz, slcwdth            0          15          57           4
+ rank, islc, iz, slcwdth            3          16          64           4
+ rank, islc, iz, slcwdth            0          16          61           4
   sum_vloc_tot(post kb)    445486.36803139152     
  finish preparing vloc,ncoret
  ========================
