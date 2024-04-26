@@ -281,10 +281,10 @@
  Radial grid used for pseudo valence density is grid 1
  Mesh size for Vloc has been set to 1280 to avoid numerical noise.
  reduced_ncore F
- reduced_ncore F
- reduced_ncore F
  Compensation charge density is not taken into account in XC energy/potential
  beta integral value:      -0.280737E+00
+ reduced_ncore F
+ reduced_ncore F
  reduced_ncore F
  it,filename           2 C.LDA_PW-JTH.xml                                                                                                                                                                                                                                                        
  Pseudopotential format is: paw10
@@ -301,19 +301,19 @@
  Radial grid used for Vloc is grid 1
  Radial grid used for pseudo valence density is grid 1
  Mesh size for Vloc has been set to 1756 to avoid numerical noise.
+ reduced_ncore F
  Compensation charge density is not taken into account in XC energy/potential
  beta integral value:      -0.482389E+01
  reduced_ncore F
  reduced_ncore F
  reduced_ncore F
- reduced_ncore F
+ spinatzero F
  spinatzero F
  finish preparing libpaw
  ========================
 
  total valence charge is   48.000000000000000     
  number of occupied states is          24
- spinatzero F
  spinatzero F
  spinatzero F
   rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
