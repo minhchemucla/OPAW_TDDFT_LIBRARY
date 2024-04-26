@@ -20,7 +20,6 @@ program main
   call test_exx
 
   call tddft
-
   call finalize_mpi_lib
   contains
     subroutine alloc_dens_pots

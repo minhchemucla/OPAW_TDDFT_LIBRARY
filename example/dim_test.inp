@@ -7,7 +7,7 @@ dz      0.5d0
 
 periodic F
 
-funct 1 !0:pwlda, 1:pbe
+funct 0 !0:pwlda, 1:pbe
 
 flg_bin F
 ekcut -1d0 ! negative values to have paw subroutines to generate

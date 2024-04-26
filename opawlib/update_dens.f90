@@ -1,4 +1,4 @@
-subroutine update_dens(n,nocc,wf,ham)
+subroutine update_dens_paw(n,nocc,wf,ham)
       use opaw_mod, only : nx,ny,nz, dv
       use atom_mod, only : natom, at => atominfo, atom_map
       use opaw_ham_mod
@@ -26,4 +26,4 @@ subroutine update_dens(n,nocc,wf,ham)
       call bcast_r8(ham%nhat,size(ham%nhat),0) 
 !      !if(rank==0) write(*,*) 'max,min(dens)',rank,maxval(dens), minval(dens)
 !      if(rank==0) write(*,*) 'max,min(nhat)',rank,maxval(ham%nhat), minval(ham%nhat)
-end subroutine update_dens      
+end subroutine update_dens_paw      

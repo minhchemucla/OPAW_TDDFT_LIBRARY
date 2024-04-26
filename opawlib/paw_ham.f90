@@ -1,4 +1,4 @@
-subroutine h_phi(ham,pin,hp)
+subroutine paw_ham(ham,pin,hp)
 !make sure the input is a complex and not a real because the
 !implicit conversion from real to complex is buggy sometimes
     use opaw_mod, only : nx,ny,nz, nn, ek3d
@@ -68,4 +68,4 @@ contains
             deallocate(ca,arr)
         enddo
     end subroutine
-end subroutine h_phi
+end subroutine paw_ham

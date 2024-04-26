@@ -19,7 +19,7 @@ subroutine opaw_ham(ham,pin,pout)
     integer :: ixs,iys,izs,ixe,iye,ize
 
     call sn_phi(pin,tmp,-0.5d0)
-    call h_phi(ham,tmp,pout)
+    call paw_ham(ham,tmp,pout)
     tmp=pout
     call sn_phi(tmp,pout,-0.5d0)
 end subroutine opaw_ham

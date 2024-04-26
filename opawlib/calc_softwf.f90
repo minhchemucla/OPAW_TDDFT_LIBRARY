@@ -1,4 +1,4 @@
-subroutine calc_soft_ortho_wf(nn,nstates,flag,ortho_wf,soft_wf)
+subroutine calc_paw_opaw_wf(nn,nstates,flag,ortho_wf,soft_wf)
   use mpi_lib_ours
   implicit none
   integer :: nn,nstates
@@ -29,4 +29,4 @@ subroutine calc_soft_ortho_wf(nn,nstates,flag,ortho_wf,soft_wf)
   call gatherv_c16(sp,soft_wf,size(sp),size(soft_wf),0)
 
   deallocate(tmp,sp)
-end subroutine calc_soft_ortho_wf
+end subroutine calc_paw_opaw_wf
