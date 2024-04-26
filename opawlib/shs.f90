@@ -1,6 +1,6 @@
 !apply S^-1/2 H S^-1/2 to a wavefunction
 !S^-1/2 (K+Vloc) S^-1/2 + S^-1/2 D S^-1/2
-subroutine shs(ham,pin,pout)
+subroutine opaw_ham(ham,pin,pout)
     use mpi_lib_ours
     use opaw_mod, only : nx,ny,nz
     use paw_mod
@@ -22,4 +22,4 @@ subroutine shs(ham,pin,pout)
     call h_phi(ham,tmp,pout)
     tmp=pout
     call sn_phi(tmp,pout,-0.5d0)
-end subroutine shs      
+end subroutine opaw_ham

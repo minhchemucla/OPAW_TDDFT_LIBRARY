@@ -301,21 +301,21 @@
  Radial grid used for Vloc is grid 1
  Radial grid used for pseudo valence density is grid 1
  Mesh size for Vloc has been set to 1756 to avoid numerical noise.
- reduced_ncore F
- reduced_ncore F
- reduced_ncore F
  Compensation charge density is not taken into account in XC energy/potential
  beta integral value:      -0.482389E+01
  reduced_ncore F
- spinatzero F
- spinatzero F
- spinatzero F
+ reduced_ncore F
+ reduced_ncore F
+ reduced_ncore F
  spinatzero F
  finish preparing libpaw
  ========================
 
  total valence charge is   48.000000000000000     
  number of occupied states is          24
+ spinatzero F
+ spinatzero F
+ spinatzero F
   rstart   -28.000000000000000       -26.000000000000000       -16.000000000000000     
  rank, islc, iz, slcwdth            3           1           4           4
   kb pseudpt formfactor. atomtype(ma) =           1  charge=            1  nrr         1500
