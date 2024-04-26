@@ -14,7 +14,7 @@ program main
 
   !OPAW STUFF
   call opaw_libpaw_prepare
-  call init_ham(nn,h_type,ham)
+  call init_ham(nn,ham)
   call opaw_make_hamiltonian(nn,nocc,nstates,wfs,ham)
 
   call calc_eig(ham)
@@ -32,13 +32,7 @@ program main
 
     subroutine test_exx
       implicit none
-      complex*16 :: wf_o(nn,nstates)
-      if(h_type.eq.0) then
-        call calc_soft_ortho_wf(nn,nstates,1,wfs,wf_o)
-      else if (h_type .eq. 1) then
-        wf_o= wfs
-      endif
-      call exx_expect_opaw(nn,nocc,nstates,wf_o(:,nocc),wf_o(:,nocc),wf_o,exx)
+      call exx_expect_opaw(nn,nocc,nstates,wfs(:,nocc),wfs(:,nocc),wfs,exx)
       call sync_mpi
     end subroutine test_exx
 end program main

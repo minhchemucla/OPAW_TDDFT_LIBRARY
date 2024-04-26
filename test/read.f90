@@ -17,7 +17,6 @@ subroutine read_input
 
     call fetch_l (periodic,'periodic',13)
     call fetch_i (funct, 'funct',13)
-    call fetch_i (h_type, 'h_type',13)
     call fetch_l (flg_bin   , 'flg_bin',13)
     call fetch_r (ekcut, 'ekcut',13)
     !call fetch_r (p_fg, 'finegrid',13)
@@ -40,7 +39,6 @@ subroutine read_input
 
   call bcast_scalar_l(periodic)
   call bcast_scalar_i(funct)
-  call bcast_scalar_i(h_type)
   call bcast_scalar_l(flg_bin)
 
   call bcast_scalar_r8(ekcut)

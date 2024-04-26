@@ -10,12 +10,10 @@
 !vxc    = exchange-correlation potential
 !dens   = density
 !nhat   = charge compensation density
-!h_type = h_type
 module opaw_ham_mod
   use atom_mod
   implicit none
   type opaw_ham_obj
-    integer :: h_type !ca*ca
     integer :: n, ns!, nocc
     real*8,  allocatable :: nhat(:)
     real*8,  allocatable :: dens(:) !density made from paw wfs
@@ -26,18 +24,16 @@ module opaw_ham_mod
     type(atom), allocatable :: at(:)  !just need for rhoij and dij
   end type
   contains
-    subroutine init_ham(n,h_type,ham)
+    subroutine init_ham(n,ham)
       !Only ran after prepare_paw
       implicit none
       integer :: st,it,ia,ms
-      integer :: n,ns,h_type
+      integer :: n,ns
       type(opaw_ham_obj) :: ham
 
       !ham%n = n
       !ham%ns = ns
       !ham%nocc = nocc
-      ham%h_type = h_type
-      if(h_type < 0 .or. h_type > 1) stop 'h_type should be 0 or 1'
       allocate(ham%nhat(n),stat=st); if(st/=0)stop 'ham%nhat alloc'
       allocate(ham%vks(n),stat=st); if(st/=0)stop 'ham%vks alloc'
       allocate(ham%vxc(n),stat=st); if(st/=0)stop 'ham%vxc alloc'

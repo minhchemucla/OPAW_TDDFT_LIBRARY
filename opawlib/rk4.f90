@@ -53,11 +53,7 @@ subroutine rk4_prop_opaw(n,nocc,nstates,dt,p,ham)
       complex*16 :: k(n,ns), y(n,ns), pin(n,ns)
 
       do is=1,ns
-        if(ham%h_type.eq.0) then
-          call sh(ham,pin(:,is),k(:,is))
-        elseif(ham%h_type.eq.1) then
-          call shs(ham,pin(:,is),k(:,is))
-        endif
+        call shs(ham,pin(:,is),k(:,is))
         k(:,is) = -ci*k(:,is)
         if(.not. last) then
           y(:,is) = pp(:,is) + dt * k(:,is) !y1

@@ -2,13 +2,13 @@ subroutine tddft
   use mpi_lib_ours
   use ham_obj, only : ham, ham_pert
   use main_mod, only : nn,dt,wfs,nt,nocc,nstates,sm
-  use main_mod, only : nx,ny,nz,dx,dy,dz,ipol,dv,h_type
+  use main_mod, only : nx,ny,nz,dx,dy,dz,ipol,dv
   use opaw_ham_mod
   implicit none
   integer :: it,st,i
   complex*16, allocatable :: wfs_pert(:,:)
   
-  call init_ham(nn,h_type,ham_pert)
+  call init_ham(nn,ham_pert)
   call perturb_wf
   !do i=1,nocc
   !  if(rank==0) write(*,*) 'i, tmp', i, sum(abs(wfs(:,i))), sum(wfs(:,i))
@@ -42,19 +42,8 @@ subroutine tddft
       ham%dens_o = 0d0
       ham_pert%dens_o = 0d0
       do i=1,nocc
-        if(h_type .eq. 0) then
-          tmp = wfs(:,i)
-          call sn_phi(nx,ny,nz,tmp,sntmp,0.5d0)
-          ham%dens_o(:) =  ham%dens_o(:) + 2d0*abs(sntmp)**2d0
-          tmp = wfs_pert(:,i)
-          call sn_phi(nx,ny,nz,tmp,sntmp,0.5d0)
-          ham_pert%dens_o(:) =  ham_pert%dens_o(:) + 2d0*abs(sntmp)**2d0
-          !write(*,*) 'i, pb,pbp',i,sum(dble(tmp)),sum(dble(tmp))
-        else
-          ham%dens_o(:) =  ham%dens_o(:) + 2d0*abs(wfs(:,i))**2d0
-          ham_pert%dens_o(:) =  ham_pert%dens_o(:) + 2d0*abs(wfs_pert(:,i))**2d0
-        endif
-        !write(*,*) 'i, pb,pbp',i,sum(dble(wfs(:,i))),sum(dble(wfs_pert(:,i)))
+        ham%dens_o(:) =  ham%dens_o(:) + 2d0*abs(wfs(:,i))**2d0
+        ham_pert%dens_o(:) =  ham_pert%dens_o(:) + 2d0*abs(wfs_pert(:,i))**2d0
       enddo
 
 !      ham%dens_o = ham%dens_o*2d0*nocc/(sum(ham%dens_o)*dv)

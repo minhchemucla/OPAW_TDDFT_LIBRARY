@@ -7,7 +7,6 @@ module main_mod
   integer :: funct_x, funct_c 
   integer :: nt
   integer :: ipol
-  integer :: h_type
 
   real*8  :: dx, dy, dz, dv
   real*8  :: ekcut

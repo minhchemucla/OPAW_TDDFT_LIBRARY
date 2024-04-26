@@ -10,14 +10,8 @@ subroutine read_wfs
   real*8  :: tmp(nn)
 
   close(441)
-  if(h_type .eq. 0) then
-    if(flg_bin)then; open (441,file='wf.bin',status='old',form='unformatted');
-    else;           open (441,file='wf.txt',status='old');  
-    endif
-  else if (h_type .eq. 1) then
-    if(flg_bin)then; open (441,file='wf_bar.bin',status='old',form='unformatted');
-    else;           open (441,file='wf_bar.txt',status='old');  
-    endif
+  if(flg_bin)then; open (441,file='wf_bar.bin',status='old',form='unformatted');
+  else;           open (441,file='wf_bar.txt',status='old');  
   endif
   rewind(441)
   
