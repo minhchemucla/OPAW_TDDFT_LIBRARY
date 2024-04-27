@@ -134,7 +134,7 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
     real*8      :: exx               ! expectation value
 
 ### description
-   Calculates the expectation value of the exchange fock exchange operator with the orthogonal pseudowavefunctions:  
+   Calculates the expectation value of the exchange fock exchange operator with the orthogonal pseudowavefunctions, $\ket{\psi_i}$:  
    $$\rm{exx}=\braket{\psi_i|V_x|\psi_j}=\sum_n^{Nocc}\int drdr'\frac{\psi_i(r)\psi_n(r)\psi_j(r')\psi_n(r')}{|r-r'|}.$$
    *Note:* In the above equation the $\psi_n(r)$ and $\psi_n(r')$ should be complex conjugate but Github flavored Markdown LaTeX bugs out when I try.
 
