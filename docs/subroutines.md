@@ -46,8 +46,7 @@ kinetic energy operator.
     integer     :: nn           ! number of grid points nn=nx*ny*nz
     integer     :: nocc         ! number of occupied states
     integer     :: nstates      ! number of states
-    complex*16  :: wfs(nn,nocc) ! non-orthogonal (h_type 0) or 
-                                ! orthogonal (h_type 1) wavefunctions
+    complex*16  :: wfs(nn,nocc) ! OPAW Wavefunctions
                               
 ###  output
     opaw_ham_obj :: ham 
@@ -61,14 +60,14 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
    	call rk4_prop_opaw(nn,nocc,nstates,dt,p,ham)
 
 ###  input
-    integer     :: nn           ! number of grid points nn=nx*ny*nz
-    integer     :: nocc         ! number of occupied states
-    integer     :: nstates      ! number of states
-    real*8      :: dt           ! time-step
-    opaw_ham_obj :: ham      ! input hamiltonian
+    integer      :: nn           ! number of grid points nn=nx*ny*nz
+    integer      :: nocc         ! number of occupied states
+    integer      :: nstates      ! number of states
+    real*8       :: dt           ! time-step
+    opaw_ham_obj :: ham         ! input hamiltonian
 
 ###  output
-    complex*16  :: p(nn,nstates)   ! Propagated wavefunctions
+    complex*16   :: p(nn,nstates)   ! Propagated wavefunctions
 
 ###  description
    Given a Hamiltonian and time step, use 4th-order Runge-Kutta to propagate all the wavefunctions a single time step. 
@@ -94,11 +93,11 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
    	call opaw_ham(ham,pin,pout)
    	
 ### input
-    integer     :: n               ! power in S^n
-    complex*16  :: pin(nx,ny,nz)   ! input wavefunction
+    opaw_ham_obj :: ham              ! PAW hamiltonian
+    complex*16   :: pin(nx,ny,nz)    ! orbital for OPAW Ham to be applied onto
 
 ### output
-    complex*16  :: pout(nx,ny,nz)    ! pout=S^-1/2HS^-1/2pin
+    complex*16   :: pout(nx,ny,nz)    ! pout=S^-1/2HS^-1/2pin
 
 ### description
    Applies $S^{-1/2}HS^{-1/2}$ to `pin` and returns the result as `pout` under Hamiltonian `ham`. The routine assumes the shape of `pin` and `pout` to be `(nx,ny,nz)`.
@@ -109,11 +108,11 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
    	 paw_ham(ham,pin,hp)
    	
 ### input
-    integer     :: n               ! power in S^n
-    complex*16  :: pin(nx,ny,nz)   ! input wavefunction
+    opaw_ham_obj :: ham              ! PAW hamiltonian
+    complex*16   :: pin(nx,ny,nz)    ! orbital for OPAW Ham to be applied onto
 
 ### output
-    complex*16  :: hp(nx,ny,nz)    ! hp = H pin
+    complex*16  :: hp(nx,ny,nz)      ! hp = H pin
 
 ### description
    Applies $H$ to `pin` and returns the result as `pout` under Hamiltonian `ham`. Starts with the kinetic energy, then the local terms, and finally the nonlocal $D^a_{ij}$ terms.
@@ -135,21 +134,22 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
     real*8      :: exx               ! expectation value
 
 ### description
-   Calculates the expectation value of the exchange fock exchange operator with the orthogonal pseudowavefunctions,  `exx` =$\braket{\psi_i|V_x|\psi_j}=\sum_n^{N_{occ}}\int drdr'\frac{\psi_i(r)\psi^*_n(r)\psi_j(r')\psi^*_n(r')}{|r-r'|}$.
+   Calculates the expectation value of the exchange fock exchange operator with the orthogonal pseudowavefunctions:  
+   $$\rm{exx}=\braket{\psi_i|V_x|\psi_j}=\sum_n^{Nocc}\int drdr'\frac{\psi_i(r)\psi_n(r)\psi_j(r')\psi_n(r')}{|r-r'|}.$$
+   *Note:* In the above equation the $\psi_n(r)$ and $\psi_n(r')$ should be complex conjugate but Github flavored Markdown LaTeX bugs out when I try.
 
 
 
 ## <a id="proj_paw"></a> $\color{blue}\rm{8.\ proj\_-paw}$  
 
 ### description
-  Caculates the overlap of the original PAW projector functor onto pin and returns the results in ca. So
-  ca(i) = $\braket{p^a_i|p_{in}}$. For an example, refer to the [`paw_ham`](#paw_ham) subroutine code in the `addvnl` ($V_{Nl}=\sum_{ij}\ket{p^a_i}D^a_{ij}\bra{p^a_j}$.
+  Caculates the overlap of the original PAW projector functor onto `pin` and returns the results in `ca`, ca(i) = $\braket{p^a_i|p_{in}}$. For an example, refer to the [`paw_ham`](#paw_ham) subroutine and the subroutine `addvnl` where $V_{Nl}=\sum_{ij}\ket{p^a_i}D^a_{ij}\bra{p^a_j}$ is applied.
 ### usage 
    	call proj_paw(ia,pin,ca,ms,ik)
    	
 ### input
-	integer     :: ia  !atom index
-	complex*16  :: pin(nx,ny,nz)
+	integer     :: ia  !index of atom in system
+	complex*16  :: pin(nx,ny,nz) !input wavefunction
 	integer     :: ms  !number of projector states
 	integer     :: ik  !legacy k-point related. It will be always be 1 in the code (gamma)
 	
@@ -183,10 +183,7 @@ To manipulate the individual parts of the Hamiltonian such as in Time-dependent 
 3. [get_pot_opaw](#get_pot_opaw)
 4. [get_dij](#get_dij)
 
-The following routines are related to applying the transformed $\bra{\eta^a_i}$and original projector functions $\bra{p^a_i}$.
-
-
-## <a id="calc_paw_wf"></a> $\color{blue}\rm{calc\_-paw\_-wf}$  
+## <a id="calc_paw_wf"></a> $\color{blue}\rm{1.\ calc\_-paw\_-wf}$  
 ### usage 
    	call calc_paw_wf(nn,nstates,opaw_wf,paw_wf)
    	
@@ -203,7 +200,7 @@ The following routines are related to applying the transformed $\bra{\eta^a_i}$a
    Applies $S^{-1/2}$ to `opaw_wf` to get `paw_wf` parallelizing over the number of nstates. 
 
 
-## <a id="update_dens_paw"></a> $\color{blue}\rm{update\_-dens\_-paw}$ 
+## <a id="update_dens_paw"></a> $\color{blue}\rm{2.\ update\_-dens\_-paw}$ 
 ### usage 
    	call update_dens_paw(nn,nocc,wf,ham)
    	
@@ -222,7 +219,7 @@ The following routines are related to applying the transformed $\bra{\eta^a_i}$a
   Caculates the $n(r)$, $\rho^a_{ij}$, and $\hat{n}(r)$ from `wf` and stores the results in`ham%rhoij`, `ham%dens` and `ham%nhat`. 
  
  
-## <a id="get_pot_opaw"></a>  $\color{blue}\rm{get \_- pot\_- opaw}$ 
+## <a id="get_pot_opaw"></a>  $\color{blue}\rm{3.\ get \_- pot\_- opaw}$ 
 ### usage 
    	call get_pot_opaw(ham)
    	
@@ -235,9 +232,9 @@ The following routines are related to applying the transformed $\bra{\eta^a_i}$a
 	opaw_ham_obj :: ham%vh
 
 ### description
-  Caculates the $V_{XC}$, $V_H$, and $V_{KS}$ from `ham%dens` and `ham%nhat` and stores the results in `ham%vxc`, `ham%vh`, `ham%vks`. The subroutine calls on 
+  Caculates the $V_{XC}$, $V_H$, and $V_{KS}$ from `ham%dens` and `ham%nhat` and stores the results in `ham%vxc`, `ham%vh`, `ham%vks`. The subroutine calls on `vxc_libxc` and `vh_sub_opaw` for the first two.
   
-## <a id="get_dij"></a> $\color{blue}\rm{get\_-dij}$ 
+## <a id="get_dij"></a> $\color{blue}\rm{4.\ get\_-dij}$ 
 ### usage 
    	call get_dij(ham)
    	
@@ -248,5 +245,5 @@ The following routines are related to applying the transformed $\bra{\eta^a_i}$a
 	opaw_ham_obj :: ham%dij     !PAW Dij nonlocal terms
 
 ### description
-  Caculates  $D^a_{ij}$ from $\rho^a_{ij}$, $V_{KS}$, and $V_{XC}$.
+  Caculates  $D^a_{ij}$ from $\rho^a_{ij}$, $V_{KS}$, and $V_{XC}$ using ABINIT subroutines.
 
