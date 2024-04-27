@@ -20,7 +20,6 @@ subroutine proj_opaw(ia,pin,ca,ms,ik)
         do is=1,ms
             ca(is)=sum(pin(ixs:ixe,iys:iye,izs:ize)&
                 *conjg(at(ia)%local_p3d1_c(:,:,:,is,ik)))*dv
-
         enddo
     else
         allocate(local_pin(ixs:ixe,iys:iye,izs:ize),stat=stat)

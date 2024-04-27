@@ -14,10 +14,10 @@ module opaw_mod
   use main_mod, only : nstates     ! total number of states !integer
   use main_mod, only : periodic    !periodic or not !logical
   use main_mod, only : funct       !0=lda, 1=pbe xc functional to be used !integer
-  use main_mod, only : funct_c     !correlation functional for LIBXC !integer
-  use main_mod, only : funct_x     !exchange functional for LIBXC !integer
                                    !   abinit subroutines to calculate ekcut.
 ! can be moved to be internal variables if needed
+  use main_mod, only : funct_c     !correlation functional for LIBXC !integer
+  use main_mod, only : funct_x     !exchange functional for LIBXC !integer
   use main_mod, only : rnel        ! # of electrons !real*8
   use main_mod, only : nocc        ! number of occupied states !integer
   use main_mod, only : vloc_tot  !shape (nn) local part of the pseudopotential !real*8
