@@ -1,1 +1,1 @@
-../test/opaw_test.x
+../example_src/opaw_test.x

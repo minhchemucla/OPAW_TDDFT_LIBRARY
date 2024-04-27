@@ -1,5 +1,5 @@
  # OPAW Subroutines
-This document is split into two sections. There is a [main subroutines](#main) section that details the subroutines related to preparing, applying operators, and time propagation. Section [OPAW Hamiltonian](#ham) deals with the subroutines that go into calculating the Hamiltonian.
+This document is split into two sections. There is a [main subroutines](#main) section that details the subroutines related to preparing, applying operators, and time propagation. Section [OPAW Hamiltonian](#ham) deals with the subroutines that go into calculating the Hamiltonian. All subroutines listed here are generally stored in a file with the subroutine name with the `.f90` extension.
 
 ## *Notes for Neuhauser Group Members Specifically*
 There are a few subroutines related to calculating $V_{H}$ that I expect to be redundant with code from the Neuhauser group so I renamed some subroutines to avoid conflict. The following is a list of subroutines that were created and can be changed to the equivalent version in the main code in the library.
