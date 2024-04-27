@@ -21,7 +21,7 @@ subroutine sn_phi(pin,sp,n)
         ize=izs+p(it)%nrough(3)-1
         allocate(ca(p(it)%mstates),sn(p(it)%mstates),stat=stat)
         if(stat/=0) stop 'ca alloc problem in sphi'
-        call proj1(ia,pin,ca,p(it)%mstates,ik)
+        call proj_opaw(ia,pin,ca,p(it)%mstates,ik)
         if (n==-1) then
           sn=at(ia)%sinv(:,ik)
         else

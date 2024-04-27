@@ -11,7 +11,7 @@ subroutine opaw_make_ham(nn,nocc,nstates,wfs,ham)
     call init_ham(nn,ham) !will only alloc arrays/initilize if ham is fresh
 
     allocate(wfs_paw(nn,nstates),stat=st);if(st/=0) stop 'wfs_paw'
-    call calc_paw_opaw_wf(nn,nstates,0,wfs,wfs_paw)
+    call calc_paw_wf(nn,nstates,wfs,wfs_paw)
     call update_dens_paw(nn,nocc,wfs_paw(:,1:nocc),ham)
     call get_pot_opaw(ham)
     call get_dij(ham)
@@ -32,7 +32,7 @@ subroutine opaw_make_ham_r8(nn,nocc,nstates,wfs,ham)
     allocate(wfs_paw(nn,nstates),stat=st);if(st/=0) stop 'wfs_paw'
     allocate(wfs_c(nn,nstates),stat=st);if(st/=0) stop 'wfs_paw'
     wfs_c = wfs
-    call calc_paw_opaw_wf(nn,nstates,0,wfs_c,wfs_paw)
+    call calc_paw_wf(nn,nstates,wfs_c,wfs_paw)
     call update_dens_paw(nn,nocc,wfs_paw(:,1:nocc),ham)
     call get_pot_opaw(ham)
     call get_dij(ham)

@@ -22,7 +22,7 @@ subroutine acc_coeff1(nx,ny,nz,nocc,wf,ham)
       if(stat/=0) stop 'ca alloc problem in coeff'
       do ib=1,nocc
         tmp=0d0
-        call proj(ia,wf(:,:,:,ib),ca,ms,1) 
+        call proj_paw(ia,wf(:,:,:,ib),ca,ms,1) 
         do is=1,ms
           do js=1,ms
             tmp(is,js)=tmp(is,js)+conjg(ca(is))*ca(js)*2d0 !Note

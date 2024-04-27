@@ -73,8 +73,8 @@ subroutine get_nhat_elem(psi_i,psi_j,nhatij)
       if(stat/=0) stop 'bra alloc problem in nhat'
       !only programmed for gamma point and nspin=1
       !bra = <p_is|
-      call proj(ia,psi_i,bra,ms,1) 
-      call proj(ia,psi_j,ket,ms,1) 
+      call proj_paw(ia,psi_i,bra,ms,1) 
+      call proj_paw(ia,psi_j,ket,ms,1) 
       !if(i.ne.j) then
       !else
       !  ket = bra

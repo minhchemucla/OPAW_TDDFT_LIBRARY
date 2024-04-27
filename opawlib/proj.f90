@@ -1,4 +1,4 @@
-subroutine proj(ia,pin,ca,ms,ik)
+subroutine proj_paw(ia,pin,ca,ms,ik)
     use opaw_mod
     use atom_mod
     use atom_mod, only : p=> pawinfo, at=> atominfo
@@ -41,4 +41,4 @@ subroutine proj(ia,pin,ca,ms,ik)
         enddo
         deallocate(local_pin)
    endif
-end subroutine proj
+end subroutine proj_paw

@@ -42,7 +42,7 @@ contains
             allocate(ca(p(it)%mstates),arr(p(it)%mstates),stat=stat)
             if(stat/=0) stop 'ca alloc problem in addvnl'
 !            call time_print('before proj')
-            call proj(ia,pin,ca,p(it)%mstates,ik)
+            call proj_paw(ia,pin,ca,p(it)%mstates,ik)
 !            call time_print('after proj')
             if(.not.at_common(ia)%edge) then
                 do is=1,p(it)%mstates

@@ -20,10 +20,7 @@ subroutine update_dens_paw(n,nocc,wf,ham)
       enddo
 
       if(rank==0) then 
-        !write(*,*) 'before allsum,rank,dens',rank,sum(ham%dens)*dv
         call get_nhat(nx,ny,nz,natom,ham%dens,ham%nhat,ham%at)
       endif
       call bcast_r8(ham%nhat,size(ham%nhat),0) 
-!      !if(rank==0) write(*,*) 'max,min(dens)',rank,maxval(dens), minval(dens)
-!      if(rank==0) write(*,*) 'max,min(nhat)',rank,maxval(ham%nhat), minval(ham%nhat)
 end subroutine update_dens_paw      
