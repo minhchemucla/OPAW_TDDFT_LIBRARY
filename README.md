@@ -82,28 +82,27 @@ The following variables can be made into internal variables if they are not need
 #### Internal OPAW Library Variables
 Theres some internal parameters that generally do not need to be changed. Feel free to play around with them if desired except for nk_loc
 
-	real*8  			 :: p_fg=0.15d0   !parameter for the fine-grid (Ono-Hirose) feel free to change
+	real*8               :: p_fg=0.15d0   !parameter for the fine-grid (Ono-Hirose) feel free to change
                           !nfovnr=n_fine/n_rough = max(dx/p_fg,dy/p_fg,dz/p_fg) 
 	integer              :: nk_loc=1      !do not change this. Required for gamma point calculation.
-	real*8   			 :: rpad=1.0d0     !radial padding in calculating n_rough grid during ono-hirose
-	real*8  			 :: rpad_r=2d0     !grid stuff
+	real*8               :: rpad=1.0d0     !radial padding in calculating n_rough grid during ono-hirose
+	real*8  	     :: rpad_r=2d0     !grid stuff
 	real*8               :: tollsij=0.01   !see original OPAW DFT paper by Wenfei
 	real*8               :: ek_factor=1d0  !for calculating ekcut from abinit PAW subroutines
 	real*8, allocatable  :: ek3d(:,:,:)    !3d exp(-k^2)
 
 #### OPAW Hamiltonian
 
-The library treats each Hamiltonian as an object. The file `opawlib/4_ham.f90` has the `opaw_ham_mod` that contains details of the `opaw_ham_obj` data type. Each instance of the hamtilonian_obj contains the electronic density and potentials necessary to define a Hamiltonian associated with a set of non-orthogonal pseudowavefunctions. The local part of the PAW potential v<sub>loc</sub><sup>tot</sup>  is assumed to be system constant. 
+The library treats each Hamiltonian as an object. The file `opawlib/4_ham.f90` has the `opaw_ham_mod` that contains details of the `opaw_ham_obj` data type. Each instance of the hamtilonian_obj contains the electronic density and potentials necessary to define a Hamiltonian associated with a set of non-orthogonal pseudowavefunctions. The local part of the PAW potential $V_{loc}^{tot}$ is assumed to be system constant. 
 
 The parts that define a Hamiltonian are:
- - The PAW density
- - The compensation charge
- - V<sub>H</sub>      - hartree potential
- - V<sub>XC</sub>     - exchange-correlation from libxc
- - V<sub>KS</sub>     =  V<sub>XC</sub> +  V<sub>H</sub> +  Vloc<sub>tot</sub>
- - PAW density matrix: rho<sup>a</sup><sub>ij</sub> = Σ<sub>n</sub> <ψ<sub>n</sub>|p<sub>i</sub>><p<sub>j</sub>|ψ<sub>n</sub>>
- - D<sup>a</sup><sub>ij</sub>   - nonlocal terms that are made with rho<sup>a</sup><sub>ij</sub>
-
+ - $n(r)$         - The PAW density
+ - $\hat{n}(r)$   -The compensation charge
+ - $V_{H}$        - hartree potential
+ - $V_{XC}$       - exchange-correlation from libxc
+ - $V_{KS}$       = $V_{XC}$ + $V_{H}$ + $V_{loc}^{tot}$
+ - $\rho^{a}_{ij}$ - PAW density matrix $=\Sigma_n <\tilde{\psi}_n|p_i>< p_j|\tilde{\psi}_n>$: 
+ - $D_{ij}^{a}$   - nonlocal terms that are made with $\rho^a_{ij}$
 
 
 ##   <a id="compiling"></a> 5. Compiling
