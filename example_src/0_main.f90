@@ -15,7 +15,6 @@ module main_mod
   real*8 :: sm
 
   logical :: periodic
-  logical :: flg_bin
 
   complex*16, allocatable :: wfs(:,:)
   real*8, allocatable :: eigs(:), vloc_tot(:)
