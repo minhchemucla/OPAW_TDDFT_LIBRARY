@@ -2,15 +2,23 @@
 
 # OPAW LIBRARY 
 
-This library is designed to implement our Orthogonal Projector Augmented Wave method into other electronic structure codes. 
+This library is designed to implement our Orthogonal Projector Augmented Wave method into other electronic structure codes. Refer to Wenfei and Dannys' original [OPAW DFT paper](https://journals.aps.org/prb/abstract/10.1103/PhysRevB.102.195118) and Minh, Tim, and Dannys' [OPAW TDDFT paper](https://pubs.aip.org/aip/jcp/article-abstract/160/14/144101/3281117/Time-dependent-density-functional-theory-with-the?redirectedFrom=fulltext) for theory. You can find both papers available [here](http://www.chem.ucla.edu/dept/Faculty/dxn/pages/publications.html) as well.
 
-This library provides the necessary ingredients for 3 main things:
+This library provides the necessary ingredients for 3 main functionalities:
 
-  1. Prepare PAW and apply the OPAW Hamiltonian,
-  2. perform RK4 time propagation,
-  3. calculate the expectation value of the exact exchange operator.
+  1. Apply the OPAW Hamiltonian.
+  2. Perform RK4 time propagation.
+  3. Calculate the expectation value of the exact exchange operator.
 
-The code only has gamma-point and close-shelled (`nspin=1`) capabilities. This library comes with a test program  with further explanation in the [test.md](docs/test.md) document. The library has its a parallelization scheme that will work for any number of cores. The parallelization scheme splits the occupied states over the number of cores, so I do not recommend running more cores than there are the number of occupied states. 
+The code has the following limitations:
+
+ 
+
+ - gamma-point (# k points = 1)
+ - close-shelled (`nspin=1`)
+ - LDA and PBE exchange-correlation functionals
+
+ This library comes with a test program  with further explanation in the [test.md](docs/test.md) document. The library has its a parallelization scheme that will work for any number of cores. The parallelization scheme splits the occupied states over the number of cores, so I do not recommend running more cores than there are the number of occupied states. 
 
 
 ## Chapters
@@ -69,11 +77,12 @@ These variables have to be read in the main code and imported into the OPAW libr
 	use main_mod, only : nstates     ! total number of states !integer
 	use main_mod, only : periodic    !periodic or not !logical
 	use main_mod, only : funct       !0=lda, 1=pbe xc functional to be used !integer
-	use main_mod, only : funct_c     !correlation functional for LIBXC !integer
-	use main_mod, only : funct_x     !exchange functional for LIBXC !integer
+	
 	
 The following variables can be made into internal variables if they are not needed in the main code.
-
+	
+	use main_mod, only : funct_c     !correlation functional for LIBXC !integer
+	use main_mod, only : funct_x     !exchange functional for LIBXC !integer
 	use main_mod, only : rnel        ! # of electrons !real*8
 	use main_mod, only : nocc        ! number of occupied states !	integer
 	use main_mod, only : vloc_tot  !shape (n) local part of the pseudopotential !real*8
@@ -93,25 +102,27 @@ Some internal parameters generally do not need to be changed. Feel free to play 
 
 #### OPAW Hamiltonian
 
-The library treats each Hamiltonian as an object. The file `opawlib/4_ham.f90` has the `opaw_ham_mod` that contains details of the `opaw_ham_obj` data type. Each instance of the hamtilonian_obj contains the electronic density and potentials necessary to define a Hamiltonian associated with a set of non-orthogonal pseudowavefunctions. The local part of the PAW potential $V_{loc}^{tot}$ is assumed to be system constant. 
+The library treats the PAW Hamiltonian using a Fortran data_type. This is equivalent to using an object in python or a struct in C. The file `opawlib/4_ham.f90` has the `opaw_ham_mod` that contains details of the `opaw_ham_obj` data type. Each instance of the `opaw_ham_obj` contains the electronic density and potentials necessary to define a Hamiltonian associated with a set of non-orthogonal pseudowavefunctions. The local part of the PAW potential $V_{loc}^{tot}$ is assumed to be system constant. 
 
-The parts that define a Hamiltonian are:
+The parts that define a PAW Hamiltonian are:
  - $n(r)$         - The PAW density
  - $\hat{n}(r)$   -The compensation charge
  - $V_{H}$        - hartree potential
  - $V_{XC}$       - exchange-correlation from libxc
  - $V_{KS}$       = $V_{XC}$ + $V_{H}$ + $V_{loc}^{tot}$
- - $\rho^{a}_{ij}$ - PAW density matrix $=\Sigma_n <\tilde{\psi}_n|p_i>< p_j|\tilde{\psi}_n>$: 
+ - $\rho^{a}_{ij}$ - PAW density matrix $=\Sigma_n \braket{\tilde{\psi}_n|p_i}\braket{ p_j|\tilde{\psi}_n}$: 
  - $D_{ij}^{a}$   - nonlocal terms that are made with $\rho^a_{ij}$
 
 
-##   <a id="compiling"></a> 5. Compiling
+##   <a id="compiling"></a> 4. Compiling
 
 The `opawlib` directory has the following subdirectories:
-	- `vloc`
-	- `libpaw`
-	- `lib`
-	- `XCI`
+	
+ - `vloc`
+ - `libpaw`
+ - `lib`
+ - `XCI`
+
 The latter two directories are designed for non-Neuhauser group users. The `vloc` directory contains routines to calculate the local part of the PAW potential and `libpaw` contains many Abinit Place this library in the main code you are trying to implement  OPAW. In the Makefile, define the make variables below
 
 	opawlib = ./opawlib
@@ -132,14 +143,15 @@ Add the following rules below the all: rule
 	  touch $(libpaw)/a.o $(libpaw)/a.mod
 	  rm $(libpaw)/*.o $(libpaw)/*.mod
 
-Then in the all rule compile `$(libpaw_) first then $(lib_)`
+Then in the all rule compile `$(libpaw_)` first then `$(lib_)`
 
 	all : $(lib_) $(libpaw_) main clean
 
 See the `examples/makefile` to see an example of how to compile including how to compile with LIBXC.
 
-##   <a id="acknowledgements"></a> 6.  Acknowledgements
+##   <a id="acknowledgements"></a> 5.  Acknowledgements
 
 This code is supported by the U.S. Department of Energy, Office of Science, Office of Advanced Scientific Computing Research and Office of Basic Energy Sciences, Scientific Discovery through Advanced Computing (SciDAC) program under Award Number DE-SC0022198.
 
 Much of the PAW capabilities were adapted from the open source [ABINIT](https://www.abinit.org/) software version 8.0.8. The PAW algorithm in ABINIT was based on the work of [Torrent, Marc, et al. "_Implementation of the projector augmented-wave method in the ABINIT code: Application to the study of iron under pressure_" Computational Materials Science **42**, 337-351 (2008)](https://doi.org/10.1016/j.commatsci.2007.07.020).
+
