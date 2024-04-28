@@ -1,13 +1,13 @@
-nx      56
-ny      52
-nz      32
-dx      0.5d0
-dy      0.5d0
-dz      0.5d0
-periodic F
-funct 0 !0:pwlda, 1:pbe
-ekcut -1d0 ! negative values to have paw subroutines to generate
-dt      0.05d0
-nt      10
-strength 1e-3
-exct_pol 1
+nx       56            !number of grid points in x direction
+ny       52            !number of grid points in y direction
+nz       32            !number of grid points in z direction
+dx       0.5d0         !grid spacing in x direction
+dy       0.5d0         !grid spacing in y direction
+dz       0.5d0         !grid spacing in z direction
+periodic F             !Use periodic or non-periodic (Martyna-Tuckermann approach)
+funct    0             !0:pwlda, 1:pbe
+ekcut    -1d0          ! Kinetic energy cutt off. Negative values will use ABINIT PAW subroutines to calculate ekcut.
+dt       0.05d0        ! Time-step in atomic units
+nt       10            ! Number of time steps
+strength 1e-3          ! gamma
+exct_pol 1             ! Direction of perturbation

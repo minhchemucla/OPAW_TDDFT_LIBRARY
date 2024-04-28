@@ -1,12 +1,12 @@
 ## compiler options
-FC   	= mpif90 -O3 -g -fcheck=all -fbacktrace #-Wall
+FC   	= mpif90
 CC		= gcc 
 LIBXC = -I/home/minh/codes/LIBXC/include -L/home/minh/codes/LIBXC/lib -lxcf90 -lxc
 FFTFLG 	= -lfftw3 -lfftw3f
 BLASFLG 	= -lblas
 LAPACKFLG 	= -llapack
 libs = $(FFTFLG) $(BLASFLG) $(LAPACKFLG) $(LIBXC)
-MPIFLG  = -DMPI  
+MPIFLG  = -DMPI -O3 -fcheck=all #-g -fbacktrace 
 
 XCI  = XCI/*f90   # XCI includes a few interface files to LIBXC
 opawlib = ./opawlib
@@ -35,9 +35,6 @@ main :
   $(param_file) $(opaw_files) $(opawvloc_files) $(src_files) $(XCI)\
   -o $(output) $(libs) 
 
-#	$(FC) -c -I $(LIB_OPAW) 1_libpaw_mod.f90
-#	$(FC) -I ./lib ./lib/*.o -I $(LIB_OPAW) $(LIB_OPAW)/*.o   *.f90 vloc/*.f90 $(OPAW)/*.f90 -o opaw.x \
-#        $(XCID) $(FFTFLG) -lblas -llapack $(LIBXC) 
 
 cleanall : clean cleanx cleanlib cleanlibpaw
       

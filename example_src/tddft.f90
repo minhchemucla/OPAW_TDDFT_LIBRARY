@@ -9,20 +9,12 @@ subroutine tddft
   complex*16, allocatable :: wfs_pert(:,:)
   
   call perturb_wf
-  !do i=1,nocc
-  !  if(rank==0) write(*,*) 'i, tmp', i, sum(abs(wfs(:,i))), sum(wfs(:,i))
-  !enddo
   do it=1,nt
     call opaw_make_ham(nn,nocc,nstates,wfs,ham)
     call rk4_prop_opaw(nn,nocc,nstates,dt,wfs,ham)
 
-    !write(*,*) '        starting pert '
     call opaw_make_ham(nn,nocc,nstates,wfs_pert,ham_pert)
     call rk4_prop_opaw(nn,nocc,nstates,dt,wfs_pert,ham_pert)
-
-    !do i=1,nocc
-    !  if(rank==0) write(*,*) 'i, p,pp', i, sum(wfs(:,i)), sum(wfs_pert(:,i))
-    !enddo
     if(rank==0) call plot_dip
   enddo
 
@@ -44,9 +36,6 @@ subroutine tddft
         ham%dens_o(:) =  ham%dens_o(:) + 2d0*abs(wfs(:,i))**2d0
         ham_pert%dens_o(:) =  ham_pert%dens_o(:) + 2d0*abs(wfs_pert(:,i))**2d0
       enddo
-
-!      ham%dens_o = ham%dens_o*2d0*nocc/(sum(ham%dens_o)*dv)
-!      ham_pert%dens_o = ham_pert%dens_o*2d0*nocc/(sum(ham_pert%dens_o)*dv)
 
       i=0
       do iz=1,nz
