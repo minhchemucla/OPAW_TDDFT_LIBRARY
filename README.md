@@ -12,10 +12,10 @@ This library provides the necessary ingredients for 3 main functionalities:
  - Calculate the expectation value of the exact exchange operator.
 
 The package contains 4 directories.
- - `docs` : Documentation
- - [`example_src`](docs/example.md) : a small program to highlight how to use the opawlib
- - `opawlib`: the 
- - `example`: A naphthalene example using the program compiled in `example_src`
+ - [`docs`](docs) : Documentation files.
+ - [`example_src`](docs/example.md) : A small program to highlight how to use the OPAW library.
+ - [`opawlib`](opawlib): The library source files. 
+ - [`example`](example): A Naphthalene example using the program compiled in `example_src`
 
 The code has the following features:
 
@@ -23,9 +23,6 @@ The code has the following features:
  - close-shelled (`nspin=1`).
  - LDA and PBE exchange-correlation functionals.
  - Periodic and nonperiodic ([Martyna-Tuckermann](https://pubs.aip.org/aip/jcp/article-abstract/110/6/2810/474725/A-reciprocal-space-based-method-for-treating-long?redirectedFrom=fulltext) method)
-
-The parallelization scheme in this library splits the occupied states, `nocc`, over the number of cores, so I do not recommend running more cores than `nocc`.
-
 
 # Chapters
 
@@ -126,8 +123,9 @@ In the main code, you can create an instance of the `opaw_ham_obj` for example
       ...
       type(opaw_ham_obj) :: ham
 
-Then given a set of OPAW wavefunctions you can use the `opaw_make_ham`routine to calculate the PAW potentials. Once the `ham` instance is prepared, you can use the `paw_ham` and `opaw_ham` subroutines to apply the PAW and OPAW Hamiltonian on a wavefunction. Additional, to propagate it in time you can use the `rk4_prop_opaw` routine inputting the occupied states to perform a single time step under `ham`. Further details of these subroutines and how to use them can be found in [example.md](docs/example.md) and [subroutines.md](docs/subroutines.md).
+Then given a set of OPAW wavefunctions you can use the `opaw_make_ham`routine to calculate the PAW potentials. Once the `ham` instance is prepared, you can use the `paw_ham` and `opaw_ham` subroutines to apply the PAW and OPAW Hamiltonian on a wavefunction. Additionally, to propagate it in time you can use the `rk4_prop_opaw` routine inputting the occupied states to perform a single time step under `ham`. Further details of these subroutines and how to use them can be found in [example.md](docs/example.md) and [subroutines.md](docs/subroutines.md).
 
+***This library is parallelized over the occupied states so I do not recommend running more cores than the number of occupied states in the system.***
 
 ##   <a id="compiling"></a> 4. Compiling
 
