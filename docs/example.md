@@ -42,7 +42,7 @@ $$ \psi'_n(r)=e^{-i\gamma \hat{r}}\psi_n(r)$$
 
 where $\hat{r}=x,y,z$ corresponding with `ipol=1,2,3` and $\gamma$ is the `strength` input in the `input` file. For each time-step, the PAW Hamiltonian is calculated then the RK4 propagation is performed on all the wavefunctions. In each time step the dipole-dipole correlation function, $\Delta n_i(r,t)$, is calculated from the OPAW wavefunctions and then printed out. 
 
-$$\Delta n_i(r,t)=\frac{1}{\gamma}\Big(n^{\gamma}(r,t)-n^{\gamma=0}(r,t)\Big)$$
+$$\Delta n_i(r,t)=\frac{\hat{r}}{\gamma}\Big(n^{\gamma}(r,t)-n^{\gamma=0}(r,t)\Big)$$
 
 For more detail on $\Delta n_i(r,t)$ and how it is used to calculate absorption spectra see the [OPAW-TDDFT paper](https://pubs.aip.org/aip/jcp/article-abstract/160/14/144101/3281117/Time-dependent-density-functional-theory-with-the?redirectedFrom=fulltext). 
 
