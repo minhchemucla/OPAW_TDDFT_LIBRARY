@@ -136,7 +136,7 @@ The `opawlib` directory has the following subdirectories:
  - `lib`
  - `XCI`
 
-The latter two directories are for non-Neuhauser group users as the `opawlib/lib` directory has only the files necessary to make the OPAW library work while Neuhauser group members will have our own `lib` with more files. The `opawlib/vloc` directory contains routines to calculate the local part of the PAW potential and `libpaw` contains many ABINIT subroutines. Place this library in the source code you are trying to implement OPAW. 
+The latter two directories are for non-Neuhauser group users as the `opawlib/lib` directory has only the files necessary to make the OPAW library work while Neuhauser group members will have our own `lib` with more files. The `opawlib/vloc` directory contains routines to calculate the local part of the PAW potential and `libpaw` contains many ABINIT subroutines. The `XCI` directory contains subroutines to interface with LIBXC. Place this library in the source code you are trying to implement OPAW. 
 
 A `makefile` in the `example_src` shows an example of how to compile and is recommended to be used as a template. In the compilation of the example program, there are 3 steps:
 
