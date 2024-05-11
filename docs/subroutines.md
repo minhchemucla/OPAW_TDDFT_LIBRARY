@@ -37,10 +37,10 @@ Reads in the pawfile files and prepares the orthogonal projectors and matrix ele
 It also prepares vk for applying the Coulomb potential and ek for applying the
 kinetic energy operator.
 
-## <a id="opaw_make_ham"></a> $\color{blue}\rm{2.\ opaw\_-make\_- hamiltonian}$
+## <a id="opaw_make_ham_c16"></a> $\color{blue}\rm{2.\ opaw\_-make\_- hamiltonian}$
 
 ### usage
-	call opaw_make_hamiltonian(nn,nocc,nstates,wfs,ham)
+	call opaw_make_hamiltonian_c16(nn,nocc,nstates,wfs,ham)
 
 ###  input
     integer     :: nn           ! number of grid points nn=nx*ny*nz
@@ -54,6 +54,22 @@ kinetic energy operator.
 ###  description
 Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2}$ then calculates the PAW density, density matrix, compensation charges, and potentials and stores this information in `ham`.
 
+## <a id="opaw_make_ham_r8"></a> $\color{blue}\rm{2.\ opaw\_-make\_- hamiltonian}$
+
+### usage
+	call opaw_make_hamiltonian_r8(nn,nocc,nstates,wfs,ham)
+
+###  input
+    integer     :: nn           ! number of grid points nn=nx*ny*nz
+    integer     :: nocc         ! number of occupied states
+    integer     :: nstates      ! number of states
+    real*8  :: wfs(nn,nocc) ! OPAW Wavefunctions
+                              
+###  output
+    opaw_ham_obj :: ham 
+
+###  description
+Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2}$ then calculates the PAW density, density matrix, compensation charges, and potentials and stores this information in `ham`.
 
 ## <a id="rk4_prop_opaw"></a> $\color{blue}\rm{3.\ rk4\_-prop\_-opaw}$
 ### usage 
