@@ -1,7 +1,7 @@
-module form
+module form_opaw
   implicit none
   save
   complex*16, allocatable :: cvkb(:,:,:)
   complex*16, allocatable :: cvn(:,:,:)
   complex*16, allocatable :: crho_n(:,:,:)
-end module form
+end module form_opaw

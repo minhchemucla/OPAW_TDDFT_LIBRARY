@@ -15,7 +15,7 @@ end subroutine vloc_tuma_prep_opaw
 subroutine vloc_prep_opaw
   use opaw_mod
   use atom_mod,        only : atom_Z, natom, ntype, pawinfo
-  use form,         only : cvkb, cvn, crho_n 
+  use form_opaw,         only : cvkb, cvn, crho_n 
   use mpi_lib_ours, only : rank
   implicit none
   integer                  :: ch,ma,nrr,ia,ig,iz,iy,ix,nxb,nyb,nzb,st

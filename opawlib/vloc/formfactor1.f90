@@ -1,7 +1,7 @@
 subroutine add_formfactor_opaw(ma,na,nx,ny,nz)  ! nx, etc -- refer to "big".
   use opaw_mod,         only : dx,dy,dz, periodic
   use atom_mod,        only : atom_map, atom_Z, atominfo
-  use form,         only : cvkb, cvn, crho_n
+  use form_opaw,         only : cvkb, cvn, crho_n
   use mpi_lib_ours, only : rank, nodes, gather_c16
   implicit none
   integer ma,na,nx,ny,nz
