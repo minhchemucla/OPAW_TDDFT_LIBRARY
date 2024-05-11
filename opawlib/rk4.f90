@@ -62,7 +62,7 @@ subroutine rk4_prop_opaw(n,nocc,nstates,dt,p,ham)
 
       if(.not.last) then
         call gatherv_c16(y,p,size(y),size(p),0)
-        call opaw_make_ham(n,nocc,nstates,p,ham)
+        call opaw_make_ham_c16(n,nocc,nstates,p,ham)
       endif
     end subroutine
 end subroutine

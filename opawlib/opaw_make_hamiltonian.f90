@@ -1,4 +1,4 @@
-subroutine opaw_make_ham(nn,nocc,nstates,wfs,ham)
+subroutine opaw_make_ham_c16(nn,nocc,nstates,wfs,ham)
     use opaw_ham_mod
     use mpi_lib_ours
     implicit none
@@ -16,7 +16,7 @@ subroutine opaw_make_ham(nn,nocc,nstates,wfs,ham)
     call get_pot_opaw(ham)
     call get_dij(ham)
     deallocate(wfs_paw)
-end subroutine opaw_make_ham
+end subroutine opaw_make_ham_c16
 
 subroutine opaw_make_ham_r8(nn,nocc,nstates,wfs,ham)
     use opaw_ham_mod

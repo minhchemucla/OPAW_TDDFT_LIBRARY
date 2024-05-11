@@ -13,7 +13,7 @@ program main
 
   !OPAW STUFF
   call prepare_opaw
-  call opaw_make_ham(nn,nocc,nstates,wfs,ham)
+  call opaw_make_ham_c16(nn,nocc,nstates,wfs,ham)
 
   call calc_eig(ham)
   call test_exx
