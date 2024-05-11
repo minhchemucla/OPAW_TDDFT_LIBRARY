@@ -37,7 +37,7 @@ Reads in the pawfile files and prepares the orthogonal projectors and matrix ele
 It also prepares vk for applying the Coulomb potential and ek for applying the
 kinetic energy operator.
 
-## <a id="opaw_make_ham_c16"></a> $\color{blue}\rm{2.\ opaw\_-make\_- hamiltonian}$
+## <a id="opaw_make_ham"></a> $\color{blue}\rm{2.a\ opaw\_-make\_- hamiltonian\_- c16}$
 
 ### usage
 	call opaw_make_hamiltonian_c16(nn,nocc,nstates,wfs,ham)
@@ -54,7 +54,7 @@ kinetic energy operator.
 ###  description
 Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2}$ then calculates the PAW density, density matrix, compensation charges, and potentials and stores this information in `ham`.
 
-## <a id="opaw_make_ham_r8"></a> $\color{blue}\rm{2.\ opaw\_-make\_- hamiltonian}$
+## <a id="opaw_make_ham_r8"></a> $\color{blue}\rm{2.b \ opaw\_-make\_- hamiltonian\_- r8}$
 
 ### usage
 	call opaw_make_hamiltonian_r8(nn,nocc,nstates,wfs,ham)
