@@ -71,22 +71,22 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
 ###  description
 Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2}$ then calculates the PAW density, density matrix, compensation charges, and potentials and stores this information in `ham`.
 
-## <a id="rk4_prop_opaw"></a> $\color{blue}\rm{3.\ rk4\_-prop\_-opaw}$
+## <a id="rk4_prop_opaw"></a> $\color{blue}\rm{3.\ rk4\_-prop\_-opaw\_-c16}$
 ### usage 
-   	call rk4_prop_opaw(nn,nocc,nstates,dt,p,ham)
+   	call rk4_prop_opaw_c16(nn,nocc,nstates,dt,p,ham)
 
 ###  input
     integer      :: nn           ! number of grid points nn=nx*ny*nz
     integer      :: nocc         ! number of occupied states
     integer      :: nstates      ! number of states
     real*8       :: dt           ! time-step
-    opaw_ham_obj :: ham         ! input hamiltonian
+    opaw_ham_obj :: ham          ! input hamiltonian
 
 ###  output
     complex*16   :: p(nn,nstates)   ! Propagated wavefunctions
 
 ###  description
-   Given a Hamiltonian and time step, use 4th-order Runge-Kutta to propagate all the wavefunctions a single time step. 
+   Given a Hamiltonian and time step, use 4th-order Runge-Kutta to propagate all the wavefunctions in a single time step. 
 
 ## <a id="sn_phi"></a> $\color{blue}\rm{4.\ sn\_-phi}$
 
