@@ -1,4 +1,4 @@
-subroutine rk4_prop_opaw(n,nocc,nstates,dt,p,ham)
+subroutine rk4_prop_opaw_c16(n,nocc,nstates,dt,p,ham)
   use opaw_mod, only : dv
   use opaw_ham_mod
   use mpi_lib_ours
@@ -65,4 +65,4 @@ subroutine rk4_prop_opaw(n,nocc,nstates,dt,p,ham)
         call opaw_make_ham_c16(n,nocc,nstates,p,ham)
       endif
     end subroutine
-end subroutine
+end subroutine rk4_prop_opaw_c16

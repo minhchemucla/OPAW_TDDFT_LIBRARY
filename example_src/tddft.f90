@@ -11,10 +11,10 @@ subroutine tddft
   call perturb_wf
   do it=1,nt
     call opaw_make_ham_c16(nn,nocc,nstates,wfs,ham)
-    call rk4_prop_opaw(nn,nocc,nstates,dt,wfs,ham)
+    call rk4_prop_opaw_c16(nn,nocc,nstates,dt,wfs,ham)
 
     call opaw_make_ham_c16(nn,nocc,nstates,wfs_pert,ham_pert)
-    call rk4_prop_opaw(nn,nocc,nstates,dt,wfs_pert,ham_pert)
+    call rk4_prop_opaw_c16(nn,nocc,nstates,dt,wfs_pert,ham_pert)
     if(rank==0) call plot_dip
   enddo
 
