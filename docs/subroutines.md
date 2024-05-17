@@ -15,12 +15,13 @@ The subroutine `vxc_libxc` also probably already exists somewhere in the main co
  1. [prepare_opaw](#opaw-libpaw-prepare): Reads OPAW files, processes projectors, and prepares for other OPAW routines.
  2. [opaw_make_hamiltonian](#opaw_make_ham) : calculates potentials and terms
  4. [rk4_prop_opaw](#rk4_prop_opaw) : 4th-order Runge-Kutta Time Propagation Step
- 5. [sn_phi](#sn_phi) : Applies $S^n$
- 6. [opaw_ham](#opaw_ham) : Applies $S^{-1/2}HS^{-1/2}$ 
- 7.  [paw_ham](#paw_ham) : Applies $H$
- 8. [exx_expect_opaw](#exx_expect_opaw): Calculates expectation value of exact Fock exchange operator
- 9.  [proj_paw](#proj_paw) : calculates overlap of PAW projectors with wavefunction
- 10. [proj_opaw](#proj_opaw): calculates overlap of OPAW projectors with wavefunction
+ 5. [rk4_static_prop_opaw](#rk4_static_prop_opaw) : 4th-order Runge-Kutta Time Propagation Step
+ 6. [sn_phi](#sn_phi) : Applies $S^n$
+ 7. [opaw_ham](#opaw_ham) : Applies $S^{-1/2}HS^{-1/2}$ 
+ 8.  [paw_ham](#paw_ham) : Applies $H$
+ 9. [exx_expect_opaw](#exx_expect_opaw): Calculates expectation value of exact Fock exchange operator
+ 10.  [proj_paw](#proj_paw) : calculates overlap of PAW projectors with wavefunction
+ 11. [proj_opaw](#proj_opaw): calculates overlap of OPAW projectors with wavefunction
 
 ##  <a id="opaw-libpaw-prepare"></a> $\color{blue}\rm{1.\  prepare\_-opaw}$
 
@@ -87,6 +88,22 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
 
 ###  description
    Given a Hamiltonian and time step, use 4th-order Runge-Kutta to propagate all the wavefunctions in a single time step. 
+
+## <a id="rk4_static_prop_opaw"></a> $\color{blue}\rm{3.\ rk4\_-static\_-prop\_-opaw\_-c16}$
+### usage 
+   	call rk4_static_prop_opaw_c16(nn,nstates,dt,p,ham)
+
+###  input
+    integer      :: nn           ! number of grid points nn=nx*ny*nz
+    integer      :: nstates      ! number of states
+    real*8       :: dt           ! time-step
+    opaw_ham_obj :: ham          ! input hamiltonian
+
+###  output
+    complex*16   :: p(nn,nstates)   ! Propagated wavefunctions
+
+###  description
+   Given a Hamiltonian and time step, use 4th-order Runge-Kutta to propagate all the wavefunctions in a single time step under a static Hamiltonian. 
 
 ## <a id="sn_phi"></a> $\color{blue}\rm{4.\ sn\_-phi}$
 
