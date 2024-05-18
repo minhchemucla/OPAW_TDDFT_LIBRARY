@@ -125,8 +125,6 @@ In the main code, you can create an instance of the `opaw_ham_obj` for example
 
 Then given a set of OPAW wavefunctions you can use the `opaw_make_ham`routine to calculate the PAW potentials. Once the `ham` instance is prepared, you can use the `paw_ham` and `opaw_ham` subroutines to apply the PAW and OPAW Hamiltonian on a wavefunction. Additionally, to propagate it in time you can use the `rk4_prop_opaw` routine inputting the occupied states to perform a single time step under `ham`. Further details of these subroutines and how to use them can be found in [example.md](docs/example.md) and [subroutines.md](docs/subroutines.md).
 
-***This library is parallelized over the occupied states so I do not recommend running more cores than the number of occupied states in the system.***
-
 ##   <a id="compiling"></a> 4. Compiling
 
 The `opawlib` directory has the following subdirectories:
