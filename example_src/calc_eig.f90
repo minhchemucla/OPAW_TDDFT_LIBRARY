@@ -18,7 +18,7 @@ subroutine calc_eig(ham)
     do i=1,nocc
       read(15);read(15) tmp
       p = tmp
-      call opaw_ham(ham,p,hp)
+      call opaw_ham_c16(ham,p,hp)
       numer = sum(conjg(p)*hp)*dv
       denom = sum(conjg(p)*p)*dv
       write(*,*) eigs(i), numer/denom

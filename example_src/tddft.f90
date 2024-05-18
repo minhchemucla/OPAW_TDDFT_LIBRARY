@@ -50,8 +50,8 @@ subroutine tddft
       enddo
 
       d_dip = (dip_pert - dip)/sm
-      write(*,*)it,(it-1)*dt,  d_dip(:),'it, t,     d_dip '; call flush(6)
-      write(*,*)it,(it-1)*dt, dip, dip_pert,'it, t,     dip,    dip_pert '; call flush(6)
+      if(rank==0) write(*,*)it,(it-1)*dt,  d_dip(:),'it, t,     d_dip '; call flush(6)
+      if(rank==0) write(*,*)it,(it-1)*dt, dip, dip_pert,'it, t,     dip,    dip_pert '; call flush(6)
     end subroutine plot_dip
 
     subroutine perturb_wf

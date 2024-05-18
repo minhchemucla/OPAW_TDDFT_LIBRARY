@@ -18,6 +18,7 @@ program main
   call calc_eig(ham)
   call test_exx
 
+  call tddft_static
   call tddft
 
   call finalize_mpi_lib

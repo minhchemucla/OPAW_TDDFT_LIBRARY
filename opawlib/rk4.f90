@@ -5,6 +5,111 @@ subroutine rk4_prop_opaw_c16(n,nocc,nstates,dt,p,ham)
   implicit none
   !integer :: is, jb, n, nb
   integer :: n,nocc,nstates
+  integer :: is,ie,i,st
+  real*8 :: dt
+  real*8 ::  nrm0(nstates), nrm1(nstates)
+  complex*16, dimension(n,nstates) :: p
+  complex*16, allocatable, dimension(:,:) :: k1,k2,k4,y
+  complex*16, parameter :: ci = (0d0,1d0)
+  type(opaw_ham_obj) :: ham
+
+  do i=1,nstates
+    nrm0(i) = sqrt(sum(abs(p(:,i))**2d0)*dv)
+  enddo
+
+  allocate(k1(n,nstates),stat=st);if(st/=0) stop 'k1 rk4'
+  allocate(k2,k4,y,mold=k1,stat=st);if(st/=0) stop 'k2,k4,y rk4'
+
+  call rk4_step(p,k1,y,dt/2d0,.false.)
+  call rk4_step(y,k2,y,dt/2d0,.false.)
+  call rk4_step(y,k4,y,dt,.false.) !k4=k3
+  k2 = k2 + k4 !k2+k3 
+  call rk4_step(y,k4,y,dt,.true.)
+  p = p + dt/6d0*(k1+2d0*k2+k4)
+  do i=1,nstates
+    nrm1(i) = sqrt(sum(abs(p(:,i))**2d0)*dv)
+    p(:,i) = p(:,i)*nrm0(i)/nrm1(i)
+  enddo
+
+  contains 
+    subroutine rk4_step(pin,k,y,dt,last)
+      implicit none
+      real*8     :: dt
+      logical    :: last
+      complex*16 :: k(n,nstates), y(n,nstates), pin(n,nstates)
+
+      do is=1,nstates
+        call opaw_ham_c16(ham,pin(:,is),k(:,is))
+        k(:,is) = -ci*k(:,is)
+        if(.not. last) then
+          y(:,is) = p(:,is) + dt * k(:,is) !y1
+        endif
+      enddo
+
+      if(.not.last) then
+        call opaw_make_ham_c16(n,nocc,nstates,y,ham)
+      endif
+    end subroutine
+end subroutine rk4_prop_opaw_c16
+
+subroutine rk4_static_prop_opaw_c16(n,nstates,dt,p,ham)
+  use opaw_mod, only : dv
+  use opaw_ham_mod
+  use mpi_lib_ours
+  implicit none
+  integer :: n,nstates
+  integer :: is,ie,i,st
+  real*8 :: dt
+  real*8 ::  nrm0(nstates), nrm1(nstates)
+  complex*16, dimension(n,nstates) :: p
+  complex*16, allocatable, dimension(:,:) :: k1,k2,k4,y
+  complex*16, parameter :: ci = (0d0,1d0)
+  type(opaw_ham_obj) :: ham
+
+  do i=1,nstates
+    nrm0(i) = sqrt(sum(abs(p(:,i))**2d0)*dv)
+  enddo
+
+  allocate(k1(n,nstates),stat=st);if(st/=0) stop 'k1 rk4'
+  allocate(k2,k4,y,mold=k1,stat=st);if(st/=0) stop 'k2,k4,y rk4'
+
+
+  call rk4_step(p,k1,y,dt/2d0,.false.)
+  call rk4_step(y,k2,y,dt/2d0,.false.)
+  call rk4_step(y,k4,y,dt,.false.) !k4=k3
+  k2 = k2 + k4 !k2+k3 
+  call rk4_step(y,k4,y,dt,.true.)
+  p = p + dt/6d0*(k1+2d0*k2+k4)
+
+  do i=1,nstates
+    nrm1(i) = sqrt(sum(abs(p(:,i))**2d0)*dv)
+    p(:,i) = p(:,i)*nrm0(i)/nrm1(i)
+  enddo
+
+  contains 
+    subroutine rk4_step(pin,k,y,dt,last)
+      implicit none
+      real*8     :: dt
+      logical    :: last
+      complex*16 :: k(n,nstates), y(n,nstates), pin(n,nstates)
+
+      do is=1,nstates
+        call opaw_ham_c16(ham,pin(:,is),k(:,is))
+        k(:,is) = -ci*k(:,is)
+        if(.not. last) then
+          y(:,is) = p(:,is) + dt * k(:,is) !y1
+        endif
+      enddo
+    end subroutine
+end subroutine
+
+subroutine rk4_prop_opaw_parallel_c16(n,nocc,nstates,dt,p,ham)
+  use opaw_mod, only : dv
+  use opaw_ham_mod
+  use mpi_lib_ours
+  implicit none
+  !integer :: is, jb, n, nb
+  integer :: n,nocc,nstates
   integer :: is,ie,ns,i,st
   real*8 :: dt
   real*8 ::  nrm0(nstates), nrm1(nstates)
@@ -65,9 +170,9 @@ subroutine rk4_prop_opaw_c16(n,nocc,nstates,dt,p,ham)
         call opaw_make_ham_c16(n,nocc,nstates,p,ham)
       endif
     end subroutine
-end subroutine rk4_prop_opaw_c16
+end subroutine rk4_prop_opaw_parallel_c16
 
-subroutine rk4_static_prop_opaw_c16(n,nstates,dt,p,ham)
+subroutine rk4_static_prop_opaw_parallel_c16(n,nstates,dt,p,ham)
   use opaw_mod, only : dv
   use opaw_ham_mod
   use mpi_lib_ours
