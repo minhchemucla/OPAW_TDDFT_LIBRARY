@@ -89,6 +89,12 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
 ###  description
    Given a Hamiltonian and time step, use 4th-order Runge-Kutta to propagate all the wavefunctions in a single time step. 
 
+## <a id="rk4_prop_opaw"></a> $\color{blue}\rm{3.\ rk4\_-prop\_-opaw\_-parallel\_-c16}$
+
+###  description
+   Parallelized version of the above. Feel free to use any number of cores.
+
+
 ## <a id="rk4_static_prop_opaw"></a> $\color{blue}\rm{3.\ rk4\_-static\_-prop\_-opaw\_-c16}$
 ### usage 
    	call rk4_static_prop_opaw_c16(nn,nstates,dt,p,ham)
@@ -104,6 +110,11 @@ Takes in the OPAW wfs and from them makes the PAW functions by applying $S^{-1/2
 
 ###  description
    Given a Hamiltonian and time step, use 4th-order Runge-Kutta to propagate all the wavefunctions in a single time step under a static Hamiltonian. 
+
+## <a id="rk4_static_prop_opaw"></a> $\color{blue}\rm{3.\ rk4\_-static\_-prop\_-opaw\_-parallel\_-c16}$
+
+###  description
+   Parallelized version of the above. Feel free to use any number of cores.
 
 ## <a id="sn_phi"></a> $\color{blue}\rm{4.\ sn\_-phi}$
 
